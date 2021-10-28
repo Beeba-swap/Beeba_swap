@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
+import { useEtherBalance, useEthers, ChainId } from '@usedapp/core'
 
-export default class Exchange extends React.Component{
-    render(){
-        return(
-            <div>Home</div>
-        );
-    }
+const Exchange = () => {
+
+  return(
+
+      <div>
+          Exchange
+      </div>
+  )
 }
+
+export default Exchange;
