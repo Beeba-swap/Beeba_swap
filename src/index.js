@@ -15,13 +15,11 @@ const config = {
 }
 
 const AppWithRouter = () => (
-
     <BrowserRouter>
-        <DAppProvider config={config}>
+        <DAppProvider config={{}}>
         <App />
         </DAppProvider>
     </BrowserRouter>
-
 )
 ReactDOM.render(<AppWithRouter />, document.getElementById('root'))
 // If you want to start measuring performance in your app, pass a function

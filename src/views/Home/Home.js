@@ -2,6 +2,9 @@ import React, {useEffect,useState} from "react";
 import abi from "../../abi/test.json";
 import { useEtherBalance, useEthers, ChainId } from '@usedapp/core'
 import { formatEther } from '@ethersproject/units'
+import detectEthereumProvider from '@metamask/detect-provider'
+import Wallet from '../component/wallet'
+
 
 const Web3 = require('web3');
 const rpcURL = 'https://rinkeby.infura.io/v3/d3caf1eed4c3468b949d41bd52059f06';
@@ -27,31 +30,20 @@ function LifecycleDemo() {
  const Home = props =>{
      const { activateBrowserWallet, deactivate, account,chainId} = useEthers()
      const userBalance = useEtherBalance(account)
-     // const networkData = [
-     //
-     //     {
-     //
-     //         chainId: "0x1",
-     //
-     //         rpcUrls: ["https://mainnet.infura.io/v3/9aa3d95b3bc440fa88ea12eaa4456161"],
-     //
-     //         blockExplorerUrls: ["https://etherscan.io"],
-     //     }
-     //
-     // ];
 
-     window.ethereum.request({
 
-         id: 1,
-         jsonrpc: "2.0",
-         method: "wallet_switchEthereumChain",
-         params: [
-             {
-                 chainId: "0x4",
-             }
-         ]
-
-     });
+     // window.ethereum.request({
+     //
+     //     id: 1,
+     //     jsonrpc: "2.0",
+     //     method: "wallet_switchEthereumChain",
+     //     params: [
+     //         {
+     //             chainId: "0x4",
+     //         }
+     //     ]
+     //
+     // });
 
 
 
@@ -84,10 +76,7 @@ function LifecycleDemo() {
 
         return(
         <div>
-            {!account && <button onClick={activateBrowserWallet}> Connect </button>}
-            {account && <button onClick={deactivate}> Disconnect </button>}
-            {account && <p>Account: {account}</p>}
-            {userBalance && <p>Balance: {formatEther(userBalance)}</p>}
+            <Wallet/>
             <LifecycleDemo/>
         </div>
         );
