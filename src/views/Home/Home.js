@@ -4,6 +4,7 @@ import { useEtherBalance, useEthers, ChainId } from '@usedapp/core'
 import { formatEther } from '@ethersproject/units'
 import detectEthereumProvider from '@metamask/detect-provider'
 import Wallet from '../component/wallet'
+import Exchange from "../component/exchange";
 
 
 const Web3 = require('web3');
@@ -78,6 +79,7 @@ function LifecycleDemo() {
         <div>
             <Wallet/>
             <LifecycleDemo/>
+            <Exchange />
         </div>
         );
 
