@@ -1,21 +1,23 @@
 import React, {Component, useEffect, useState} from "react";
 import {useEtherBalance, useEthers, ChainId, useTransactions} from '@usedapp/core'
-import _tokenbeeba from "../../abi/token_beeba.json";
-import _tokenmistersigz from "../../abi/token_mistersigz.json";
+import tokenbeeba from "../../abi/token_beeba.json";
+import tokenmistersigz from "../../abi/token_mistersigz.json";
 import "../../css/select_token.css";
 import Web3 from "web3";
+
+
 
 const Exchange = () => {
     //use contract(another address)
         const rpcURL = 'https://rinkeby.infura.io/v3/d3caf1eed4c3468b949d41bd52059f06';
         //*--- set value *---*
-        const address_beeba = "0x9dB9c1639A092AD1c4d8ed97F3aE83F453757963";
+        const address_beeba = "0x8C701E8144d1F6648106cd5383d2C0213402cdAC";
         const address_mistersigz = "0xddC24BcEa1B408B542244D4d0cC197255f4df77F";
         const Web3 = require("web3");
         const web3 = new Web3(rpcURL);
         //*------------------*
-        const contract_beeba = new web3.eth.Contract(_tokenbeeba,address_beeba); //import contract_beeba
-        const contract_mistersigz = new web3.eth.Contract(_tokenmistersigz,address_mistersigz); //import contract_mistersigz
+        const contract_beeba = new web3.eth.Contract(tokenbeeba.abi,address_beeba); //import contract_beeba
+        const contract_mistersigz = new web3.eth.Contract(tokenmistersigz.abi,address_mistersigz); //import contract_mistersigz
         //*------------------------------------------------------
         // Set value provider
         //-------------------------------------------------------*
@@ -107,6 +109,51 @@ const Exchange = () => {
                 alert("not enough mineral")
             }
         }
+        // console.log(contract_beeba.methods.transfer(account,200).encodeABI())
+    //----------------------------------    ----------------------------
+    // Test
+    //--------------------------------------------------------------
+    const test = () =>{
+        var web3 = new Web3(Web3.givenProvider||'ws://some.local-or-remote.node:8546');
+        console.log(contract_beeba.options.address)
+         const testcon = new web3.eth.Contract(tokenbeeba.abi,address_beeba
+             , {
+            from:account,
+            to: '0x2c483815dACeFA416837b5b03510800DAeD7E96B' ,
+            value: 500
+        }
+        )
+        testcon.methods.transfer("0x2c483815dACeFA416837b5b03510800DAeD7E96B",web3.utils.toWei('50',"ether")).send({from:account});
+        // window.ethereum
+        //     .request({
+        //         method: 'eth_sendTransaction',
+        //         params: [
+        //             {
+        //                 chainId: 0x4,
+        //                 id: 4,
+        //                 from: account,
+        //                 to: '0x7Ea9a51Df0E63fCec7549426c85fFD2cC7D6141e',
+        //                 value: '1000000000000000',
+        //             },
+        //         ],
+        //     })
+        //     .then((txHash) => console.log(txHash))
+        //     .catch((error) => console.error);
+        // testcon.methods.approve(testcon.options.address,55).send({from:account});
+        // console.log(testcon.options.address)
+        // console.log(testcon.options)
+        // contract_beeba.Transaction({from:account,to:'0x7Ea9a51Df0E63fCec7549426c85fFD2cC7D6141e',value:10000})
+        // contract_beeba.methods.sendTransaction({from:account,to:'0x7Ea9a51Df0E63fCec7549426c85fFD2cC7D6141e',value:10000});
+        // web3.eth.sendTransaction({from:account,to:"0x2c483815dACeFA416837b5b03510800DAeD7E96B",value:10000,chain:'0x4',data:testcon}).then(console.log)
+        // web3.eth.Contract(tokenbeeba.abi,address_beeba).balanceOf(account).then(console.log);
+        // web3.eth.getBalance(account).then(console.log);
+        // web3.eth.getBlockUncleCount("0x407d73d8a49eeb85d32cf465507dd71d507100c1")
+        //     .then(console.log);
+//transfer is the function in the contract to transfer money from wallet A to B
+//         var Data = contract_beeba.methods.transfer.getData(receiver,500);
+//         web3.eth.sendTransaction({to:receiver, from:sender, data: Data});
+    }
+
 
     //--------------------------------------------------------------
     // Use on react runtime
@@ -133,28 +180,21 @@ const Exchange = () => {
                     <button>
                         <img src={img_beeba} style={{width:"40px",height:"40px",borderRadius:"20px"}}/>
                     </button>
-
-                    {/*<div className="popup" onClick="popup()">*/}
-                    {/*    <button >change</button>*/}
-                    {/*    <span className="popuptext" id="myPopup">*/}
-                    {/*        <img src={"../image/ethereum.png"} style={{width:"40px",height:"40px",borderRadius:"20px"}}/>*/}
-                    {/*        <img src={"../image/beeba.png"} style={{width:"40px",height:"40px",borderRadius:"20px"}}/>*/}
-                    {/*    </span>*/}
-                    {/*</div>*/}
                 </div>
             }
             { swaplog &&
-                <div>token:<input type={"number"} value={tokenB} onChange={e => settokenB(e.target.value)}/>
-                    <button><img src={"../image/beeba.png"} style={{width:"40px",height:"40px",borderRadius:"20px"}}/></button>
+                <div>
+                    token:<input type={"number"} value={tokenB} onChange={e => settokenB(e.target.value)}/>
+                    <button><img src={img_beeba} style={{width:"40px",height:"40px",borderRadius:"20px"}}/></button>
                     <br/>
                     ether:<input type={"number"} value={calcexchange(rateAB, tokenB)}/>
-                    <button><img src={"../image/ethereum.png"} style={{width:"40px",height:"40px",borderRadius:"20px"}}/></button>
+                    <button><img src={img_ethereum} style={{width:"40px",height:"40px",borderRadius:"20px"}}/></button>
                 </div>
             }
             <div>
                 {account}
                 <br/>
-                <button onClick={_swap}>swap</button>
+                <button onClick={test}>swap</button>
                 <div>
                     {"\nETH provider | user"}<br/>{provider_amounteth + " " + accountbalance_eth}
                 </div>
