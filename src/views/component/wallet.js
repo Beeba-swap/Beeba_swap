@@ -61,7 +61,9 @@ const Wallet = () => {
             <button className ="connect-wallet" onClick={connect}>
                 <FontAwesomeIcon icon ="sign-in-alt" className ="sign-in"  /> Connect Wallet
             </button>}
-            {account && <button className ="disconnect-wallet" onClick={deactivate}>{account}</button>}
+            {account && <button className ="disconnect-wallet" onClick={deactivate}>
+                <FontAwesomeIcon icon ="sign-out-alt" classname ="sign-out" />{account}
+                </button>}
 
             <h4>{showerror}</h4>
             {account && <p>Account: {account}</p>}

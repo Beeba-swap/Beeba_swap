@@ -1,5 +1,5 @@
 import '../../css/navbar.css';
-import { Component } from "react";
+import { Component, useState } from "react";
 import Home from '../Home/Home';
 import Viewer from '../Viewer/Viewer';
 import Exchange from '../Exchange/Exchange';
@@ -12,40 +12,43 @@ import {
     Link
 } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Wallet from '../component/wallet';
 
 class Navbar extends Component {
     render() {
+
         return (
             <Router>
                 <nav class="navbar-main">
                     <h2>App<img src="../image/beaver_listen_music.png"/> Beebaswap</h2>
-                    <FontAwesomeIcon icon ="sun" className ="theme-mode"  /> 
-                    {/* <a class="navbar-brand" href="#">
+                    <FontAwesomeIcon icon ="sun" className ="theme-mode"  />
+                    <Wallet class="nav-wallet"/>
+                    <a class="navbar-brand" href="#">
                     </a>
-                    <div class="dropdown">
+                    <div class="dropdown" id="dd">
                         <button class="dropbtn">
                     <FontAwesomeIcon icon ="bars" className ="menu-bars"  /> 
                     </button>
-                        <div class="dropdown-content">
-                            <ul>
+                        <div class ="dropdown-content" id="dropdown-c">
+                            <ul >
                                 <li>
-                                    <Link to="/">Home</Link>
+                                    <Link to="/"><FontAwesomeIcon icon ="home" className ="home"  /> Home</Link>
                                 </li>
                                 <li>
-                                    <Link to="/Viewer">Viewer</Link>
+                                    <Link to="/Viewer"><FontAwesomeIcon icon ="user-alt" className ="user"  /> Viewer</Link>
                                 </li>
                                 <li>
-                                    <Link to="/Exchange">Exchange</Link>
+                                    <Link to="/Exchange"><FontAwesomeIcon icon ="dollar-sign" className ="viewer"  /> Exchange</Link>
                                 </li>
                                 <li>
-                                    <Link to="/Pools">Pools</Link>
+                                    <Link to="/Pools"><FontAwesomeIcon icon ="store" className ="store"  /> Pools</Link>
                                 </li>
                                 <li>
-                                    <Link to="/Abouts">Abouts</Link>
+                                    <Link to="/Abouts"><FontAwesomeIcon icon ="user-friends" className ="about"  /> Abouts</Link>
                                 </li>
                             </ul>
                         </div>
-                    </div> */}
+                    </div>
                 </nav>
 
                 {/* A <Switch> looks through its children <Route>s and
