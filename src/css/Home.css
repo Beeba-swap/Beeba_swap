@@ -1,0 +1,29 @@
+.container{
+    font-family: 'Itim', cursive;
+    display: inline-block;
+    margin-top: 8%;
+    margin-left: 20%;
+}
+.img-responsive{
+    height: 400px;
+    width: auto;
+    float: left;
+}
+
+article{
+    height: 4%;
+    width: 100%;
+    margin-top: 2%;
+}
+article h2{
+    margin-top: 6%;
+    margin-right: 0%;
+    text-align: center;
+}
+p{
+    font-size: 20px;
+}
+article h2{
+    font-family: 'Caveat', cursive;
+    font-size: 48px;
+}
