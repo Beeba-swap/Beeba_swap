@@ -1,4 +1,6 @@
 {
+  "address" : "0x8C701E8144d1F6648106cd5383d2C0213402cdAC",
+  "owner":"0x2c483815dACeFA416837b5b03510800DAeD7E96B",
   "deploy": {
     "VM:-": {
       "linkReferences": {},

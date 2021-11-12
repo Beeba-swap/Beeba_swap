@@ -2,16 +2,16 @@
 Cjavascript:S1128"'Remove this unused import of 'ChainId'.(œà—õ
 Gjavascript:S1128"+Remove this unused import of 'formatEther'.(´ú”¥
 Rjavascript:S1128"6Remove this unused import of 'detectEthereumProvider'.(¶‘¤±
-Sjavascript:S1481"2Remove the declaration of the unused 'a' variable.(íô®Œýÿÿÿÿ
-Ljavascript:S1117"+'a' is already declared in the upper scope.(íô®Œýÿÿÿÿ
-Pjavascript:S1854"/Remove this useless assignment to variable "a".(íô®Œýÿÿÿÿ
-gjavascript:S1481 "FRemove the declaration of the unused 'activateBrowserWallet' variable.(ˆž¹âýÿÿÿÿ
-djavascript:S1854 "CRemove this useless assignment to variable "activateBrowserWallet".(ˆž¹âýÿÿÿÿ
-\javascript:S1481 ";Remove the declaration of the unused 'deactivate' variable.(ˆž¹âýÿÿÿÿ
-Yjavascript:S1854 "8Remove this useless assignment to variable "deactivate".(ˆž¹âýÿÿÿÿ
-Yjavascript:S1481 "8Remove the declaration of the unused 'chainId' variable.(ˆž¹âýÿÿÿÿ
-Vjavascript:S1854 "5Remove this useless assignment to variable "chainId".(ˆž¹âýÿÿÿÿ
-]javascript:S1481!"<Remove the declaration of the unused 'userBalance' variable.(Ð«ó©ÿÿÿÿÿ
-Zjavascript:S1854!"9Remove this useless assignment to variable "userBalance".(Ð«ó©ÿÿÿÿÿ
-?javascript:S125$"Remove this commented out code.(Òëöúÿÿÿÿ
-?javascript:S1253"Remove this commented out code.(è­ûôþÿÿÿÿ
+Pjavascript:S1128"(Remove this unused import of 'Exchange'.(ÁÒã»øÿÿÿÿ8ûèŽ¤Ñ/
+Ljavascript:S1117"+'a' is already declared in the upper scope.(íô®Œýÿÿÿÿ
+Pjavascript:S1854"/Remove this useless assignment to variable "a".(íô®Œýÿÿÿÿ
+gjavascript:S1481""FRemove the declaration of the unused 'activateBrowserWallet' variable.(ˆž¹âýÿÿÿÿ
+djavascript:S1854""CRemove this useless assignment to variable "activateBrowserWallet".(ˆž¹âýÿÿÿÿ
+\javascript:S1481"";Remove the declaration of the unused 'deactivate' variable.(ˆž¹âýÿÿÿÿ
+Yjavascript:S1854""8Remove this useless assignment to variable "deactivate".(ˆž¹âýÿÿÿÿ
+Yjavascript:S1481""8Remove the declaration of the unused 'chainId' variable.(ˆž¹âýÿÿÿÿ
+Vjavascript:S1854""5Remove this useless assignment to variable "chainId".(ˆž¹âýÿÿÿÿ
+]javascript:S1481#"<Remove the declaration of the unused 'userBalance' variable.(Ð«ó©ÿÿÿÿÿ
+Zjavascript:S1854#"9Remove this useless assignment to variable "userBalance".(Ð«ó©ÿÿÿÿÿ
+?javascript:S125&"Remove this commented out code.(Òëöúÿÿÿÿ
+?javascript:S1255"Remove this commented out code.(è­ûôþÿÿÿÿ
