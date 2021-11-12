@@ -1,23 +1,35 @@
 .box {
-    width: 40%;
     margin: 0 auto;
     /*background: rgba(255,255,255,0.2);*/
-    padding: 35px;
     border: 2px solid #fff;
-    border-radius: 20px/50px;
+    border-radius: 32px/32px;
     background-clip: padding-box;
     text-align: center;
 }
 .box img{
-    width: 50px;
-    height: 50px;
+    width: 42px;
+    height: auto;
+    border-radius: 36px;
+}
+.box input[type=number] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #06D85F;
+    border-radius: 8px;
+}
+.box input::-webkit-outer-spin-button,
+.box input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 .button {
-    font-size: 1em;
-    padding: 10px;
+    font-family: 'Itim', cursive;
+    font-size: 24px;
     /*color: #fff;*/
+    padding: 8px 12px;
     border: 2px solid #06D85F;
-    border-radius: 20px/50px;
+    border-radius: 32px/32px;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease-out;
@@ -78,6 +90,7 @@
     width: 50px;
     height: 50px;
 }
+
 @media screen and (max-width: 700px){
     .box{
         width: 70%;
