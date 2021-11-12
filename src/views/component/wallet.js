@@ -56,7 +56,7 @@ const Wallet = () => {
 
     return(
 
-        <div>
+        <div class ="head-4">
             {!account && 
             <button className ="connect-wallet" onClick={connect}>
                 <FontAwesomeIcon icon ="sign-in-alt" className ="sign-in"  /> Connect Wallet

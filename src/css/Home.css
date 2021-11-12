@@ -27,3 +27,10 @@ article h2{
     font-family: 'Caveat', cursive;
     font-size: 48px;
 }
+.sl-button{
+    display: flex;
+      gap: 10px;
+}
+.wallet-home{
+    font-size: 8px;
+}
