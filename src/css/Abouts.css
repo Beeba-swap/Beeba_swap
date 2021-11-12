@@ -1,0 +1,45 @@
+.Border{
+    border: 2px solid #0BAB64;
+    border-width: 10%;
+    width: 20%;
+    height: max-content;
+    border-radius: 20px;
+    background-color: #0BAB64;
+    text-align: center;
+    color: white;
+    
+  }
+img{
+  padding: 5px;
+  width: 96%;
+  border-radius: 20%;
+  justify-content: center;
+}
+.f1{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    flex-wrap: wrap;
+  }
+.f2{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top:5%;
+    flex-wrap: wrap;
+}
+.f3{
+  display: flex;
+  justify-content: start;
+  gap: 5%;
+  margin-top:5%;
+  flex-wrap: wrap;
+}
+.font{
+    font-size: 150%;
+}
+.left{
+  float: left;
+  width: 40%;
+  padding: 15px;
+}
