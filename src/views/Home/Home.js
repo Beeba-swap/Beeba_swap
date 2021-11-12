@@ -86,10 +86,10 @@ function LifecycleDemo() {
                     </article><article>
                     <p>The website is for educational purposes. not related to commerical.The numbers are simulated only.</p>
                 </article>
-                <article>
-                <Wallet /> 
+                <div class="sl-button">
+                <Wallet class ="wallet-home"/> 
                 <a href="../Exchange/Exchange.js"><button  class="trade-button">Trade now </button></a>
-                </article>
+                </div>
             </div>
             {/* <LifecycleDemo/>
             <Exchange /> */}

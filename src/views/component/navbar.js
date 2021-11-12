@@ -23,12 +23,11 @@ class Navbar extends Component {
                     <h2>App<img src="../image/beaver_listen_music.png"/> Beebaswap</h2>
                     <FontAwesomeIcon icon ="sun" className ="theme-mode"  />
                     <Wallet class="nav-wallet"/>
-                    <a class="navbar-brand" href="#">
-                    </a>
                     <div class="dropdown" id="dd">
                         <button class="dropbtn">
                     <FontAwesomeIcon icon ="bars" className ="menu-bars"  /> 
                     </button>
+                        <div class="f-border">
                         <div class ="dropdown-content" id="dropdown-c">
                             <ul >
                                 <li>
@@ -47,6 +46,7 @@ class Navbar extends Component {
                                     <Link to="/Abouts"><FontAwesomeIcon icon ="user-friends" className ="about"  /> Abouts</Link>
                                 </li>
                             </ul>
+                        </div>
                         </div>
                     </div>
                 </nav>

@@ -7,7 +7,7 @@ import Web3 from "web3";
 
 
 
-const Exchange = () => {
+const Exchanges = () => {
     //use contract(another address)
         const rpcURL = 'https://rinkeby.infura.io/v3/d3caf1eed4c3468b949d41bd52059f06';
         //*--- set value *---*
@@ -209,4 +209,4 @@ const Exchange = () => {
     );
 }
 
-export default Exchange
+export default Exchanges

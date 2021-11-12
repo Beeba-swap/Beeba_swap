@@ -2,9 +2,9 @@
     height: auto;
     width: 100%;
     display: inline-flex;
-    justify-content: flex-start;
-    align-items: baseline;
+    align-items: center;
     font-family: 'Itim', cursive;
+    column-gap: 10px;
 }
 
 .navbar-main h2 {
@@ -20,6 +20,7 @@
     border:none;
     cursor:pointer;
     border-radius: 10px;
+    align-self: flex-end;
 }
 
 .menu-bars {
@@ -42,8 +43,7 @@
 
 .navbar-main .theme-mode {
     margin-left: 50%;
-    margin-right: 10px;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .navbar-main .dropdown {
@@ -53,6 +53,7 @@
 .navbar-main .dropdown{
     position: relative;
     display: inline-block;
+    margin-left: 0;
 }
 .navbar-main .dropdown-content{
     display: none;
@@ -64,14 +65,13 @@
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     border-radius: 4%;
     z-index: 1;
+    /* margin-top: 12px; */
 }
 .navbar-main .dropdown{
     float: right;
 }
 .dropdown:hover .dropdown-content {display: block;}
 
-.home{
-    
-}
-ul li{
+.navbar-main .nav-wallet{
+    margin-top: 20px;
 }
