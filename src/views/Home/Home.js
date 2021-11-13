@@ -4,6 +4,9 @@ import { useEtherBalance, useEthers, ChainId } from '@usedapp/core'
 import { formatEther } from '@ethersproject/units'
 import detectEthereumProvider from '@metamask/detect-provider'
 import Wallet from '../component/wallet'
+import Exchange from "../component/exchange";
+import '../../css/Home.css'
+import '../../css/trade-button.css'
 
 
 const Web3 = require('web3');
@@ -76,8 +79,20 @@ function LifecycleDemo() {
 
         return(
         <div>
-            <Wallet/>
-            <LifecycleDemo/>
+            <div class ="container">
+            <img class ="img-responsive"src = "image/beavera_paint.png"/>
+                <article>
+                    <h2>Beaver on the move</h2>
+                    </article><article>
+                    <p>The website is for educational purposes. not related to commerical.The numbers are simulated only.</p>
+                </article>
+                <div class="sl-button">
+                <Wallet class ="wallet-home"/> 
+                <a href="../Exchange/Exchange.js"><button  class="trade-button">Trade now </button></a>
+                </div>
+            </div>
+            {/* <LifecycleDemo/>
+            <Exchange /> */}
         </div>
         );
 

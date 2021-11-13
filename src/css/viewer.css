@@ -1,0 +1,82 @@
+
+.container-viewer{
+    margin-left: 12%;
+    width: 80%;
+    height: 20%;
+    text-align: center;
+}
+
+.container-viewer article p2{
+    font-family: 'Itim', cursive;
+    font-size: 32px;
+    text-align: center;
+    padding: 6px;
+    width: auto;
+}
+
+article h3{
+    font-family: 'Caveat', cursive;
+    font-size: 44px;
+}
+
+.container-viewer .bottom-box{
+    margin-top: 6%;
+    font-family: 'Itim', cursive;
+    font-size: 52px;
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    gap: 100px;
+}
+.bottom-box .user-count article h4{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.bottom-box .viewer-count article p{
+    font-size: 18px;
+    margin-top: 0;
+}
+.bottom-box .trade-count article p{
+    font-size: 18px;
+    margin-top: 0;
+}
+.bottom-box .user-count article p{
+    font-size: 18px;
+    margin-top: 0;
+}
+.viewer-count article h4{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.trade-count article h4{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.user-count {
+    border-style:solid;
+    border-color:#0BAB64 ;
+    align-self: flex-end;
+    border-radius: 8%;
+    padding: 36px;
+    margin-top: 6%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.viewer-count{
+    border-style:solid;
+    border-color:#0BAB64 ;
+    align-self: flex-start;
+    border-radius: 8%;
+    padding: 36px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.trade-count{
+    border-style:solid;
+    border-color:#0BAB64 ;
+    align-self: flex-end;
+    border-radius: 8%;
+    padding: 40px 44px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.user-c,.viewer-c ,.trade-c{
+    color: #0BAB64;
+}
