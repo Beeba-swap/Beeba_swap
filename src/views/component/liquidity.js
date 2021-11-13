@@ -46,17 +46,6 @@ const Liquidity = () => {
     balancecall()
     return (
         <div>
-            <input value={tokenA} onChange={e=>settokenA(e.target.value)}/>
-            <input value={tokenB} onChange={e=>settokenB(e.target.value)}/>
-            <input type={"submit"} value={"submit"} />
-            <input type={"submit"} value={"withdraw"} />
-            <input type={"submit"} value={"spend"} onClick={spend}/>
-            <div>{account_beeba}</div>
-            <div>{tokenA}</div>
-            <div><h1>Beeba</h1></div>
-            <div>address: {beeba.address}</div>
-            <div>liquidity address: {beeba_liq.address}</div>
-            <div>{token}</div>
             <Select_liquidity/>
         </div>
     );
