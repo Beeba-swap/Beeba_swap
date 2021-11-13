@@ -3,7 +3,9 @@ import { useEtherBalance, useEthers, ChainId, useTransactions } from '@usedapp/c
 import "../../css/select_token.css"
 import Web3 from "web3";
 import beeba from "../../abi/token_beeba.json";
+import exchange_beeba from "../../abi/exchange_beeba.json";
 import mistersigz from "../../abi/token_mistersigz.json";
+import exchange_mistersigz from "../../abi/exchange_mistersigz.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Wallet from '../component/wallet';
 
@@ -21,48 +23,200 @@ const Select_token = () => {
     // import contract
     const contract_beeba = new web3.eth.Contract(beeba.abi, beeba.address);
     const contract_mistersigz = new web3.eth.Contract(mistersigz.abi, mistersigz.address);
-    // set provider
-    // provider = Mistersigz account
-    const provider_address = beeba.owner;
-    var [providerbalance_eth, setproviderbalance_eth] = useState(0);
-    var [providerbalance_bee, setproviderbalance_bee] = useState(0);
-    var [providerbalance_sigz, setproviderbalance_sigz] = useState(0);
-
+    const contract_exchange_beeba = new web3.eth.Contract(exchange_beeba.abi,exchange_beeba.address);
+    const contract_exchange_mistersigz = new web3.eth.Contract(exchange_mistersigz.abi,exchange_mistersigz.address);
     // balancecall check balance all wallet
     const balancecall = () => {
         // check account (have account?)
         if (account) {
             // call balance account (user execute)
-            contract_beeba.methods.balanceOf(account).call((err, result) => { setaccountbalance_bbt(result) });
-            contract_mistersigz.methods.balanceOf(account).call((err, result) => { setaccountbalance_sigz(result) });
+            // (web3.utils.fromWei(useEtherBalance(account).toString(),"ether"));
+            contract_beeba.methods.balanceOf(account).call((err, result) => { setaccountbalance_bee(web3.utils.fromWei(result.toString(),"ether")) });
+            contract_mistersigz.methods.balanceOf(account).call((err, result) => { setaccountbalance_sigz(web3.utils.fromWei(result.toString(),"ether")) });
         }
-        // call balance provider
-        web3.eth.getBalance(provider_address).then(result => { setproviderbalance_eth(result) });
-        contract_beeba.methods.balanceOf(provider_address).call((err, result) => { setproviderbalance_bee(result) });
-        contract_mistersigz.methods.balanceOf(provider_address).call((err, result) => { setproviderbalance_sigz(result) });
+        contract_exchange_beeba.methods.balanceofether().call((err,result) => {
+            setsupply_ethbee(web3.utils.fromWei(result.toString(),"ether"));
+        });
+        contract_exchange_beeba.methods.balanceOftoken().call((err,result) => {
+            setsupply_bee(web3.utils.fromWei(result.toString(),"ether"));
+        });
+        contract_exchange_mistersigz.methods.balanceofether().call((err,result) => {
+            setsupply_ethsigz(web3.utils.fromWei(result.toString(),"ether"));
+        });
+        contract_exchange_mistersigz.methods.balanceOftoken().call((err,result)=>{
+           setsupply_sigz(web3.utils.fromWei(result.toString(),"ether"));
+        });
     }
     //execute user
     let { account } = useEthers();
-    var accountbalance_eth = useEtherBalance(account); // ethers
-    var [accountbalance_bbt, setaccountbalance_bbt] = useState(0); // beeba
-    var [accountbalance_sigz, setaccountbalance_sigz] = useState(0); // mistersigz
+    var [accountbalance_eth,setaccountbalance_eth] = useState(useEtherBalance(account))// ethers
+    var [accountbalance_bee, setaccountbalance_bee] = useState(parseFloat(0,10)); // beeba
+    var [accountbalance_sigz, setaccountbalance_sigz] = useState(parseFloat(0,10)); // mistersigz
     //calculate token
+
+
+    // console.log(accountbalance_eth + " " + accountbalance_bee + " " + accountbalance_sigz)
+
+    var [supply_eth,setsupply_eth] = useState(parseFloat(0,10));
+    var [supply_ethbee,setsupply_ethbee] = useState(parseFloat(0,10));
+    var [supply_ethsigz,setsupply_ethsigz] = useState(parseFloat(0,10));
+    var [supply_bee,setsupply_bee] = useState(parseFloat(0,10));
+    var [supply_sigz,setsupply_sigz] = useState(parseFloat(0,10));
+
+
     let [tokenA, settokenA] = useState(0); //--> input token on swap
     let [tokenB, settokenB] = useState(0); //--> input token on swap
-    let [supplyA, setsupplyA] = useState(0);
-    let [supplyB, setsupplyB] = useState(0);
-    let rateAB = supplyA / supplyB;
-    let rateBA = supplyB / supplyA;
+
 
     // set value supply
-    // useEffect(()=>{
-    //     setsupplyA(providerbalance_eth);
-    //     setsupplyB(providerbalance_bee);
-    // },[]);
+    useEffect(()=>{
+        contract_exchange_beeba.methods.balanceofether().call((err,result) => {
+            setsupply_ethbee(web3.utils.fromWei(result.toString(),"ether"));
+        });
+        contract_exchange_beeba.methods.balanceOftoken().call((err,result) => {
+            setsupply_bee(web3.utils.fromWei(result.toString(),"ether"));
+        });
+        // setratebee_per_eth(supply_bee/supply_eth);
+        // setrateeth_per_bee(supply_bee/supply_eth);
+    },[]);
 
+    var [__token,set_token] = useState(0);
+    var [___token,set___token] = useState(0);
+    var [__token__,set__token__] = useState(0);
+    var [status_exchange,setstatus_exchange] = useState("Submit");
+     const swap_exchange = async transaction => {
+        if(account && tokenA > 0){
+            __token = web3.utils.toWei(tokenA.toString(),"ether") ;
+            ___token = calcexchange(tokenA);
+            __token__ =calceth(tokenA);
+            //to Wei
+            ___token = web3.utils.toWei(___token.toString(),"ether");
+            __token__ = web3.utils.toWei(__token__.toString(),"ether");
+            switch (selected_tokenA){
+                case 1 :
+                    //buy token by eth;
+                    if(selected_tokenB == 2 && parseFloat(calcexchange(tokenA),10) < parseFloat(supply_bee,10)){
+                        await contract_exchange_beeba.methods.buytoken(___token).send({from:account,value:__token});
+                    }
+                    else {alert("High token to exchange!")}
+                    if(selected_tokenB == 3 && parseFloat(calcexchange(tokenA),10) < parseFloat(supply_sigz,10)){
+                        await contract_exchange_mistersigz.methods.buytoken(___token).send({from:account,value:__token});
+                    }
+                    else {alert("High token to exchange!")}
+
+                    // console.log("buy token by eth case 1");
+                    break;
+                case 2 :
+                    //sell token
+                    if(selected_tokenB == 1 && parseFloat(calcexchange(tokenA),10) < parseFloat( supply_ethbee,10)){
+                        await contract_exchange_beeba.methods.Approve(__token).send({from:account}) ;
+                        await contract_exchange_beeba.methods.selltoken(__token,___token).send({from:account});
+                    }
+                    else {alert("High token to exchange!")}
+
+                    if(selected_tokenB == 3 && calcexchange(tokenA) < supply_sigz){
+                        await contract_exchange_beeba.methods.Approve(__token).send({from:account});
+                        await contract_mistersigz.methods.approvefrom(exchange_mistersigz.address,exchange_beeba.address,___token).send({from:account});
+                        await contract_exchange_beeba.methods.swaptoken(
+                            exchange_mistersigz.address,
+                            mistersigz.address,
+                            ___token,
+                            __token,
+                            __token__
+                        ).send({from:account});
+                    }
+                    else {alert("High token to exchange!")}
+
+                    // console.log("sell&swap token by case 2");
+                    break;
+                case 3 :
+                    //sell token
+                    if(selected_tokenB == 1 && parseFloat(calcexchange(tokenA),10) < parseFloat(supply_ethsigz,10)){
+                        await contract_exchange_mistersigz.methods.Approve(__token).send({from:account});
+                        await contract_exchange_mistersigz.methods.selltoken(__token,___token).send({from:account});
+                    }
+                    else {alert("High token to exchange!")}
+
+                    // console.log(calcexchange(tokenA)+" "+supply_bee)
+                    if(selected_tokenB == 2 && parseFloat(calcexchange(tokenA),10) < parseFloat(supply_bee,10)){
+                        await contract_exchange_mistersigz.methods.Approve(__token).send({from:account});
+                        await contract_beeba.methods.approvefrom(exchange_beeba.address,exchange_mistersigz.address,___token).send({from:account});
+                        await contract_exchange_mistersigz.methods.swaptoken(
+                                exchange_beeba.address,
+                                beeba.address,
+                                ___token,
+                                __token,
+                                __token__
+                              ).send({from:account});
+                    }
+                    else {alert("High token to exchange!")}
+
+                    // console.log("sell&swap token by case 3");
+                    break;
+                default : console.log("try again") ;
+            }
+            // console.log(__token + " " + ___token + " " + __token__)
+        }
+    }
     //calculate rate token
-    const calcexchange = (rate, input_token) => {
-        return rate * input_token;
+    const calceth = (input_token) => {
+        var supplyA,supplyB ;
+        switch (selected_tokenA){
+            case 2:
+                supplyA = supply_bee ;
+                supplyB = supply_ethbee;
+                break;
+            case 3:
+                supplyA = supply_sigz ;
+                supplyB = supply_ethsigz;
+                break ;
+            default:supplyA=1;supplyB=1 ;
+        }
+        return ((supplyB/supplyA) * input_token).toPrecision(14);
+    }
+    const calcexchange = (input_token) => {
+        // console.log(supply_ethsigz + " " + supply_sigz + "\n"+
+        //     supply_ethbee + " " + supply_bee
+        // );
+        var supplyA,supplyB ;
+        switch (selected_tokenA){
+            case 1: supplyA = supply_eth;break;
+            case 2: supplyA = supply_bee;break;
+            case 3 : supplyA = supply_sigz;break;
+            default:supplyA=1;
+        }
+        switch (selected_tokenB){
+            case 1 : supplyB = supply_eth ; break;
+            case 2 : supplyB = supply_bee ; break;
+            case 3 : supplyB = supply_sigz; break;
+            default:supplyB=1;
+        }
+        if(selected_tokenA == 2 && selected_tokenB == 1){
+            supplyB = supply_ethbee ;
+        }
+        if(selected_tokenA == 3 && selected_tokenB == 1){
+            supplyB = supply_ethsigz ;
+        }
+        if(selected_tokenB == 2 && selected_tokenA == 1){
+            supplyA = supply_ethbee ;
+        }
+        if(selected_tokenB == 3 && selected_tokenA == 1){
+            supplyA = supply_ethsigz ;
+        }
+        if(selected_tokenA != 1 && selected_tokenB != 1){
+            switch (selected_tokenA){
+                case 2: supplyA = supply_bee/supply_ethbee;break;
+                case 3 : supplyA = supply_sigz/supply_ethsigz;break;
+                default:supplyA=1;
+            }
+            switch (selected_tokenB){
+                case 2 : supplyB = supply_bee/supply_ethbee ; break;
+                case 3 : supplyB = supply_sigz/supply_ethsigz; break;
+                default:supplyB=1;
+            }
+        }
+        // console.log((supplyB/supplyA) * input_token)
+        return ((supplyB/supplyA) * input_token).toPrecision(14);
     }
     //--------------------------------------------------------------
     // Select token
@@ -81,18 +235,6 @@ const Select_token = () => {
     const select_token = (_tokenA, _tokenB) => {
         setselected_tokenA(_tokenA);
         setselected_tokenB(_tokenB);
-        switch (_tokenA) {
-            case 1: setsupplyA(providerbalance_eth); break;
-            case 2: setsupplyA(providerbalance_bee); break;
-            case 3: setsupplyA(providerbalance_sigz); break;
-            default: setsupplyA(0);
-        }
-        switch (_tokenB) {
-            case 1: setsupplyB(providerbalance_eth); break;
-            case 2: setsupplyB(providerbalance_bee); break;
-            case 3: setsupplyB(providerbalance_sigz); break;
-            default: setsupplyB(0);
-        }
     }
     const selection_tokenA = () => {
         switch (selected_tokenA) {
@@ -140,24 +282,24 @@ const Select_token = () => {
     const token_ether = () => {
         return (
             <span class="first-input">
-                {selected_tokenA == 1 && <input type={"number"} value={tokenA} onChange={e => settokenA(e.target.value)} />}
-                {selected_tokenB == 1 && <input type={"number"} value={calcexchange(rateBA, tokenA)} onChange={e => settokenB(e.target.value)} />}
+                {selected_tokenA == 1 && <input type={"number"} value={tokenA} onChange={e => {if(e.target.value <= 10**9){settokenA(e.target.value)}}}  />}
+                {selected_tokenB == 1 && <input type={"number"} value={calcexchange(tokenA)} onChange={e => settokenB(e.target.value)}  />}
             </span>
         );
     }
     const token_beeba = () => {
         return (
             <span>
-                {selected_tokenA == 2 && <input type={"number"} value={tokenA} onChange={e => settokenA(e.target.value)} />}
-                {selected_tokenB == 2 && <input type={"number"} value={calcexchange(rateBA, tokenA)} />}
+                {selected_tokenA == 2 && <input type={"number"} value={tokenA} onChange={e => {if(e.target.value <= 10**9){settokenA(e.target.value)}}} />}
+                {selected_tokenB == 2 && <input type={"number"} value={calcexchange(tokenA)} />}
             </span>
         );
     }
     const token_mistersigz = () => {
         return (
             <span>
-                {selected_tokenA == 3 && <input type={"number"} value={tokenA} onChange={e => settokenA(e.target.value)} />}
-                {selected_tokenB == 3 && <input type={"number"} value={calcexchange(rateBA, tokenA)} />}
+                {selected_tokenA == 3 && <input type={"number"} value={tokenA} onChange={e => {if(e.target.value <= 10**9){settokenA(e.target.value)}}} />}
+                {selected_tokenB == 3 && <input type={"number"} value={calcexchange(tokenA)} />}
             </span>
         );
     }
@@ -165,7 +307,7 @@ const Select_token = () => {
     balancecall();
     return (
         <div>
-            <div class="swap-box">
+             <div className="swap-box">
                 <article>
                     <h3><FontAwesomeIcon icon="dollar-sign" className="dollar-sign" />Exchange</h3>
                     <p>Trade token is an instance</p>
@@ -216,10 +358,11 @@ const Select_token = () => {
                         </div>
                     </div>
                 </div>
-                <div class="exhange-connect">
-                <Wallet />
+                <div className="exchange-swap">
+                    {!account &&<Wallet/>}
+                    {account && <input type={"submit"} value={status_exchange} onClick={swap_exchange}/>}
                 </div>
-            </div>
+             </div>
         </div>
     );
 }

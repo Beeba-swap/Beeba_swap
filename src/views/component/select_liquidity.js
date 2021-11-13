@@ -3,7 +3,7 @@ import {useEtherBalance, useEthers, ChainId, useTransactions} from '@usedapp/cor
 import "../../css/select_token.css"
 import Web3 from "web3";
 import beeba from "../../abi/token_beeba.json";
-import _beeba from "../../abi/liquidity.json";
+import _beeba from "../../abi/exchange_beeba.json";
 import mistersigz from "../../abi/token_mistersigz.json";
 
 const Select_liquidity = () => {

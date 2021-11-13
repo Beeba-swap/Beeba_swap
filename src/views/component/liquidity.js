@@ -1,4 +1,4 @@
-import beeba_liq from "../../abi/liquidity.json" ;
+import beeba_liq from "../../abi/exchange_beeba.json" ;
 import beeba from "../../abi/token_beeba.json";
 import Select_liquidity from "./select_liquidity.js";
 import "../../css/liquidity.css";
@@ -35,11 +35,11 @@ const Liquidity = () => {
                 // call balance account (user execute)
                 contract_beeba.methods.balanceOf(account).call((err,result) =>{setaccount_beeba(web3.utils.fromWei(result.toString(),'ether'))});
             }
-            contract_beeba_liquidity.methods.balanceOftoken().call((err,result)=>settoken(result));
+            // contract_beeba_liquidity.methods.balanceOftoken().call((err,result)=>settoken(result));
         }
         const spend = () => {
             if(account){
-                contract_beeba_liquidity.methods.buytoken(web3.utils.toWei("1000","ether")).send({from:account,value:1});
+                // contract_beeba_liquidity.methods.buytoken(web3.utils.toWei("1000","ether")).send({from:account,value:1});
             }
         }
     const img_beeba = "../image/beeba.png" ;
