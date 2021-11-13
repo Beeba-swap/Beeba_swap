@@ -3,7 +3,7 @@ import { Component, useState } from "react";
 import Home from '../Home/Home';
 import Viewer from '../Viewer/Viewer';
 import Exchange from '../Exchange/Exchange';
-import Pools from '../Pools/Pools';
+import Liqiudtity from  '../Liquidity/Liquidity.js';
 import Abouts from '../Abouts/Abouts';
 import {
     BrowserRouter as Router,
@@ -40,7 +40,7 @@ class Navbar extends Component {
                                     <Link to="/Exchange"><FontAwesomeIcon icon ="dollar-sign" className ="viewer"  /> Exchange</Link>
                                 </li>
                                 <li>
-                                    <Link to="/Pools"><FontAwesomeIcon icon ="store" className ="store"  /> Pools</Link>
+                                    <Link to="/Liqiudtity"><FontAwesomeIcon icon ="store" className ="store"  /> Pools</Link>
                                 </li>
                                 <li>
                                     <Link to="/Abouts"><FontAwesomeIcon icon ="user-friends" className ="about"  /> Abouts</Link>
@@ -57,7 +57,7 @@ class Navbar extends Component {
                     <Route path="/" exact component={Home} />
                     <Route path="/Viewer" component={Viewer} />
                     <Route path="/Exchange" component={Exchange} />
-                    <Route path="/Pools" component={Pools} />
+                    <Route path="/Liqiudtity" component={Liqiudtity} />
                     <Route path="/Abouts" component={Abouts} />
                 </Switch>
             </Router>

@@ -1,42 +1,83 @@
-.box {
-    margin: 0 auto;
-    /*background: rgba(255,255,255,0.2);*/
-    border: 2px solid #fff;
-    border-radius: 32px/32px;
-    background-clip: padding-box;
+.swap-box{
+    margin:auto;
+    margin-top: 4%;
+    border: 4px solid #06D85F;
+    width: 28%;
+    /* margin: 8% 26% 0 ; */
+    border-radius:  8%;
     text-align: center;
+    padding-bottom: 32px;
+}
+.swap-box article p{
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-family: 'Itim', cursive;
+    font-size: 24px;
+}
+.swap-box article h3{
+    margin: 4% 6% 4%;
+}
+hr{
+    border-color: #06D85F;
+    width: 70%;
+    top: 0;
+    opacity: 35%;
+}
+.box label{
+    float:left;
+    margin-left: 4%;
+    margin-top: 2%;
+}
+.box {
+    /*background: rgba(255,255,255,0.2);*/
+    border: 3px solid #06D85F;
+    border-radius: 16px;
+    width: 80%;
+    margin: 20px 9% 20px;
+    justify-content: center;
 }
 .box img{
-    width: 42px;
+    width: 28px;
     height: auto;
     border-radius: 36px;
 }
 .box input[type=number] {
-    width: 20%;
-    padding: 12px 20px;
+    width: 30%;
+    /* padding: 12px 12px; */
     margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #06D85F;
-    border-radius: 8px;
+    border: 1px solid #06D85F;
+    border-radius: 32px/32px;
+    outline: none;
 }
 .box input::-webkit-outer-spin-button,
 .box input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+.swap{
+    border:none;
+    background-color: #fff;
+    font-size: 16px;
+    color: #06D85F;
 }
 .button {
     font-family: 'Itim', cursive;
     font-size: 24px;
     /*color: #fff;*/
     padding: 8px 12px;
-    border: 2px solid #06D85F;
-    border-radius: 32px/32px;
+    background-color: #fff;
+    border: none;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease-out;
 }
-.button:hover {
-    background: #06D85F;
-}
+.from  label{}
+/* .f-box{
+    border: 1px solid #06D85F;
+    border-radius: 32px/32px;
+    width: 50%;
+    margin: 20px 20% 20px;
+    justify-content: center;
+} */
 
 .overlay {
     position: fixed;
