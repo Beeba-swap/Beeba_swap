@@ -9,37 +9,38 @@ const Abouts = () =>{
                     <div class = 'font'>Ourteam!</div>
                         <div class = 'f1'>
                                     <div class = 'Border'>
-                                        <div><img src = 'image/beeba.png'></img>
-                                    </div>
-                                        <div>Korawit Moonsarn</div>
+                                        <div class = 'profile'>
+                                            <img src = 'image/Beaver.png'></img>
+                                        </div>
+                                        <div>Narodom Yatnimit</div>
                                         <div>System Analyst</div>
                                     </div>
                                     <div class = 'Border'>
-                                        <div>
-                                            <img src = 'image/beeba.png'></img>
+                                        <div class = 'profile'>
+                                            <img src = 'image/Beaver.png'></img>
                                         </div>
-                                        <div>Korawit Moonsarn</div>
-                                        <div>System Analyst</div>
+                                        <div>Warat Yenjaiprasert</div>
+                                        <div>Developer BackEnd</div>
                                     </div>
                             </div>
                             <div class = 'f2'>
                                     <div class = 'Border'>
-                                        <div>
-                                            <img src = 'image/beeba.png'></img>
+                                        <div class = 'profile'>
+                                            <img src = 'image/Beaver.png'></img>
                                         </div>
                                         <div>Korawit Moonsarn</div>
                                         <div>System Analyst</div>
                                     </div>
                                     <div class = 'Border'>
-                                        <div>
-                                            <img src = 'image/beeba.png'></img>
+                                        <div class = 'profile'>
+                                            <img src = 'image/Beaver.png'></img>
                                         </div>
                                         <div>Korawit Moonsarn</div>
                                         <div>System Analyst</div>
                                     </div>
                                     <div class = 'Border'>
-                                        <div>
-                                            <img src = 'image/beeba.png'></img>
+                                        <div class = 'profile'>
+                                            <img src = 'image/Beaver.png'></img>
                                         </div>
                                         <div>Korawit Moonsarn</div>
                                         <div>System Analyst</div>
@@ -47,18 +48,45 @@ const Abouts = () =>{
                     </div>
                 </div>
                 <div>
-                    <div>
-                        For Education!!
+                    <div class = 'center'>
+                        <div class = 'header'>
+                            For Education!!
+                        </div>
                     </div>
-                    <div> 
-                        This project make for to learn about blockchain;
+                    <div class = 'txt'>
+                        <div> 
+                            This project make for to learn about blockchain;
+                        </div>
+                        <div> 
+                            Defult project :
+                        </div>
                     </div>
-                    <div> 
-                        Defult project :
+                    <div class = 'center'>
+                    <div class='button'>
+                        <img class='img' src = 'image/download.png'></img>
+                        Beeba-Blockchain.docx
+                    </div>
+                    </div>
+                    <div class = 'center'>
+                        <div class = 'header'>
+                            Usage
+                        </div>
+                    </div>
+                    <div class = 'center'>
+                        <div class = 'image'>
+                            <img src = 'image/iconcss.png'></img>
+                            <img src = 'image/icongithub.png'></img>
+                            <img src = 'image/iconinfura2.png'></img>
+                            
+                        </div>
+                        <div class = 'image'>
+                            <img src = 'image/iconmetamask.png'></img>
+                            <img src = 'image/iconreact.png'></img>
+                            <img src = 'image/iconRemix.png'></img>
+                        </div>
                     </div>
                 </div>
             </div> 
-            
         </div>
     );
 }
