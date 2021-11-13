@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { wait } from "@testing-library/dom";
 import React from "react";
 import '../../css/Abouts.css'
@@ -47,6 +48,7 @@ const Abouts = () =>{
                         </div>
                     </div>
                 </div>
+                <div class = 'border'></div>
                 <div>
                     <div class = 'center'>
                         <div class = 'header'>
@@ -62,10 +64,9 @@ const Abouts = () =>{
                         </div>
                     </div>
                     <div class = 'center'>
-                    <div class='button'>
-                        <img class='img' src = 'image/download.png'></img>
-                        Beeba-Blockchain.docx
-                    </div>
+                        <div class='button_about'>
+                        <a href = './Doc1.docx'> <FontAwesomeIcon icon ="arrow-circle-down"/> Beeba-Blockchain.docx</a>
+                        </div>
                     </div>
                     <div class = 'center'>
                         <div class = 'header'>

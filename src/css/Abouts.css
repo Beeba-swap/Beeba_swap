@@ -21,6 +21,7 @@ img{
     justify-content: center;
     gap: 5%;
     flex-wrap: wrap;
+    margin-top: 2%;
   }
 .f2{
     display: flex;
@@ -37,15 +38,17 @@ img{
   flex-wrap: wrap;
 }
 .font{
-    font-size: 80px;
-    font-family: Caveat;
+  font-size: 60px;
+  font-family: Caveat;
+  margin-left: 10%;
 }
 .left{
   float: left;
-  width: 60%;
+  width: 50%;
   padding: 15px;
+  
 }
-.button {
+.button_about {
   background-color: #0BAB64;
   border: none;
   color: white;
@@ -57,21 +60,24 @@ img{
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 20px;
+  margin-top: 5%;
 }
 .center{
   text-align: center;
   height: 100px;
+  margin-left: 30%;
 }
 .header{
   font-size: 40px;
   font-family: Itim;
 }
 .image{
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
   display: flex;
   justify-content: center;
   margin-left: 30%;
+  gap:40%;
 }
 .block2{
   width:50%;
@@ -82,10 +88,18 @@ img{
   height: 160px;
 }
 .img{
-  width: 20px;
-  height: 20px;
+  width: 20%;
+  height: 20%;
 }
 .txt{
   font-family: Itim;
   font-size: 20px;
+}
+.button_about a{
+  align-items: baseline;
+  text-decoration: none;
+  color: black;
+}
+.border{
+  border-right:  2px solid gray;
 }
