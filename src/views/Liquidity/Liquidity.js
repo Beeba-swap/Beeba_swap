@@ -1,13 +1,17 @@
 import React from "react";
-import Liquidity from "../component/liquidity.js";
+import Select_liquidity from "../component/liquidity.js";
+import beeba from "../../abi/token_beeba.json";
+import {useEthers} from "@usedapp/core";
 
-export default class Liqiudtity extends React.Component{
-    render(){
+const Liquidity = () =>{
+
+
+    let { account } = useEthers();
         return(
             <div>
-
-                <Liquidity/>
+                { account == beeba.owner&&<Select_liquidity/>}
             </div>
         );
-    }
+
 }
+export default Liquidity;
