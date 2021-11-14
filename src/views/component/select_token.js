@@ -28,24 +28,30 @@ const Select_token = () => {
     // balancecall check balance all wallet
     const balancecall = () => {
         // check account (have account?)
-        if (account) {
-            // call balance account (user execute)
-            // (web3.utils.fromWei(useEtherBalance(account).toString(),"ether"));
-            contract_beeba.methods.balanceOf(account).call((err, result) => { setaccountbalance_bee(web3.utils.fromWei(result.toString(),"ether")) });
-            contract_mistersigz.methods.balanceOf(account).call((err, result) => { setaccountbalance_sigz(web3.utils.fromWei(result.toString(),"ether")) });
+        if(window.ethereum){
+            if (account) {
+                // call balance account (user execute)
+                // (web3.utils.fromWei(useEtherBalance(account).toString(),"ether"));
+                contract_beeba.methods.balanceOf(account).call((err, result) => {
+                    if(result){setaccountbalance_bee(web3.utils.fromWei(result.toString(),"ether")); }
+                });
+                contract_mistersigz.methods.balanceOf(account).call((err, result) => {
+                    if(result){setaccountbalance_sigz(web3.utils.fromWei(result.toString(),"ether"));}
+                });
+            }
+            contract_exchange_beeba.methods.balanceofether().call((err,result) => {
+                if(result){setsupply_ethbee(web3.utils.fromWei(result.toString(),"ether"));}
+            });
+            contract_exchange_beeba.methods.balanceOftoken().call((err,result) => {
+                if(result){setsupply_bee(web3.utils.fromWei(result.toString(),"ether"));}
+            });
+            contract_exchange_mistersigz.methods.balanceofether().call((err,result) => {
+                if(result){setsupply_ethsigz(web3.utils.fromWei(result.toString(),"ether"));}
+            });
+            contract_exchange_mistersigz.methods.balanceOftoken().call((err,result)=>{
+                if(result){setsupply_sigz(web3.utils.fromWei(result.toString(),"ether"));}
+            });
         }
-        contract_exchange_beeba.methods.balanceofether().call((err,result) => {
-            setsupply_ethbee(web3.utils.fromWei(result.toString(),"ether"));
-        });
-        contract_exchange_beeba.methods.balanceOftoken().call((err,result) => {
-            setsupply_bee(web3.utils.fromWei(result.toString(),"ether"));
-        });
-        contract_exchange_mistersigz.methods.balanceofether().call((err,result) => {
-            setsupply_ethsigz(web3.utils.fromWei(result.toString(),"ether"));
-        });
-        contract_exchange_mistersigz.methods.balanceOftoken().call((err,result)=>{
-           setsupply_sigz(web3.utils.fromWei(result.toString(),"ether"));
-        });
     }
     //execute user
     let { account } = useEthers();
@@ -66,19 +72,6 @@ const Select_token = () => {
 
     let [tokenA, settokenA] = useState(0); //--> input token on swap
     let [tokenB, settokenB] = useState(0); //--> input token on swap
-
-
-    // set value supply
-    useEffect(()=>{
-        contract_exchange_beeba.methods.balanceofether().call((err,result) => {
-            setsupply_ethbee(web3.utils.fromWei(result.toString(),"ether"));
-        });
-        contract_exchange_beeba.methods.balanceOftoken().call((err,result) => {
-            setsupply_bee(web3.utils.fromWei(result.toString(),"ether"));
-        });
-        // setratebee_per_eth(supply_bee/supply_eth);
-        // setrateeth_per_bee(supply_bee/supply_eth);
-    },[]);
 
     var [__token,set_token] = useState(0);
     var [___token,set___token] = useState(0);

@@ -8,8 +8,7 @@ import "../../css/popup.css"
 import '../../css/wallet.css';
 
 const Web3 = require('web3');
-const rpcURL = 'https://rinkeby.infura.io/v3/d3caf1eed4c3468b949d41bd52059f06';
-const web3 = new Web3(rpcURL);
+const web3 = new Web3(Web3.givenProvider);
 
 
 const Wallet = () => {
@@ -23,7 +22,6 @@ const Wallet = () => {
 
     if(window.ethereum){
         window.ethereum.request({
-
             id: 1,
             jsonrpc: "2.0",
             method: "wallet_switchEthereumChain",
@@ -52,36 +50,33 @@ const Wallet = () => {
 
                 });
             }
-
-        }else{
-            // open("#list-provider")
+        }
+        else{
             window.location = "#list-provider" ;
-            // window.open('https://metamask.io/download', '_blank').focus();
             setshowerror("Please Install Metamask!!");
         }
     }
 
     const disconnect = () => {
         if(account){
-            // contract_beeba.methods.balanceOf(account).call((result)=>{if(result){setbeeba_balance(web3.utils.fromWei(result.toString(),"ether"))}});
-            // contract_mistersigz.methods.balanceOf(account).call((result)=>{if(result){setmistersigz_balance(web3.utils.fromWei(result.toString(),"ether"))}});
             window.location = "#menu" ;
-        }
-        console.log("hellow")
-    }
-    const disconnected = () => {
-        if(account){
-            window.location = "#" ;
         }
     }
     const balancecall = () => {
-        // check account (have account?)
-        if (account) {
-            // call balance account (user execute)
-            // (web3.utils.fromWei(useEtherBalance(account).toString(),"ether"));
-            contract_beeba.methods.balanceOf(account).call((err, result) => { setbeeba_balance(web3.utils.fromWei(result.toString(),"ether")) });
-            contract_mistersigz.methods.balanceOf(account).call((err, result) => { setmistersigz_balance(web3.utils.fromWei(result.toString(),"ether")) });
-        }
+       if(window.ethereum){
+           if(account){
+               contract_beeba.methods.balanceOf(account).call((err, result) => {
+                   if(result){
+                       setbeeba_balance(web3.utils.fromWei(result.toString(),"ether"));
+                   }
+               });
+               contract_mistersigz.methods.balanceOf(account).call((err, result) => {
+                   if(result){
+                       setmistersigz_balance(web3.utils.fromWei(result.toString(),"ether"));
+                   }
+               });
+           }
+       }
     }
     const meta_mask = () =>{
         window.open('https://metamask.io/download', '_blank').focus();
@@ -90,7 +85,7 @@ const Wallet = () => {
     // {/*{account && <p>Account: {account}</p>}*/}
     // {/*{userBalance && <p>Balance: {formatEther(userBalance)}</p>}*/}
     // <button onClick={deactivate}>
-    balancecall();
+    balancecall()
     return(
         <div>
             <div className="wallet">
