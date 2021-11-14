@@ -10,41 +10,53 @@ const Abouts = () =>{
                     <div class = 'font'>Ourteam!</div>
                         <div class = 'f1'>
                                     <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
+                                        <div >
+                                            <img class = 'profile' src = 'image/beeba.png' ></img>
                                         </div>
-                                        <div>Narodom Yatnimit</div>
-                                        <div>System Analyst</div>
+                                        <div>
+                                            <div>Narodom Yatnimit</div>
+                                            <div>Developer BackEnd</div>
+                                        </div>
                                     </div>
                                     <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
+                                        <div >
+                                            <img class = 'profile' src = 'image/mistersigz.png'></img>
                                         </div>
-                                        <div>Warat Yenjaiprasert</div>
-                                        <div>Developer BackEnd</div>
+                                        <div>
+                                            <div>Warat Yenjaiprasert</div>
+                                            <div>Developer BackEnd</div>
+                                        </div>
+                                        
                                     </div>
                             </div>
                             <div class = 'f2'>
                                     <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
+                                        <div >
+                                            <img class = 'profile' src = 'image/park.jpg'></img>
                                         </div>
-                                        <div>Korawit Moonsarn</div>
-                                        <div>System Analyst</div>
+                                        <div>
+                                            <div>Korawit Moonsarn</div>
+                                            <div>Developer FrontEnd</div>
+                                        </div>
                                     </div>
                                     <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
+                                        <div >
+                                            <img class = 'profile' src = 'image/195323.jpg' ></img>
                                         </div>
-                                        <div>Korawit Moonsarn</div>
-                                        <div>System Analyst</div>
+                                        <div>
+                                            <div>Setthathorn Somrug</div>
+                                            <div>Developer FrontEnd</div>
+                                        </div>                           
                                     </div>
                                     <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
+                                        <div >
+                                            <img class = 'profile' src = 'image/nam.jpg'></img>
                                         </div>
-                                        <div>Korawit Moonsarn</div>
-                                        <div>System Analyst</div>
+                                        <div>
+                                            <div>Rinrada Kunjobmueng</div>
+                                            <div>Developer FrontEnd</div>
+                                        </div>
+                                        
                         </div>
                     </div>
                 </div>

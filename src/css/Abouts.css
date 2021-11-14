@@ -61,10 +61,11 @@ img{
   cursor: pointer;
   border-radius: 20px;
   margin-top: 5%;
+  
 }
 .center{
   text-align: center;
-  height: 100px;
+  height: 96px;
   margin-left: 30%;
 }
 .header{
@@ -73,7 +74,7 @@ img{
 }
 .image{
   width: 140px;
-  height: 140px;
+  height: auto;
   display: flex;
   justify-content: center;
   margin-left: 30%;
@@ -84,8 +85,8 @@ img{
   height: 100%;
 }
 .profile{
-  width: 160px;
-  height: 160px;
+  width: 164px;
+  height: 164px;
 }
 .img{
   width: 20%;
