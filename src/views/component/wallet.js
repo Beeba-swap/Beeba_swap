@@ -132,10 +132,9 @@ const Wallet = () => {
                         <h4 className="account-option"><FontAwesomeIcon icon="user" className="user"/>{account}</h4>
                         <hr/>
                         <div className="token">
-                            {userBalance &&<div><pre><img src={"./image/ethereum.png"}/>{formatEther(userBalance)}<span> Eth</span></pre></div>}
-                            {userBalance&&<div><pre><img src={"./image/beeba.png"}/>{beeba_balance}<span> Bee</span> </pre></div>}
-                            {userBalance&&<div><pre><img src={"./image/mistersigz.png"}/>{mistersigz_balance} <span> Sigz</span></pre></div>}
-
+                            {userBalance &&<div><pre><img src={"./image/Ethereum-token.png"}/>{formatEther(userBalance)}<span> Eth</span></pre></div>}
+                            {userBalance&&<div><pre><img src={"./image/Beeba-token.png"}/>{beeba_balance}<span> Bee</span> </pre></div>}
+                            {userBalance&&<div><pre><img src={"./image/mistersigz-token.png"}/>{mistersigz_balance} <span> Sigz</span></pre></div>}
                         </div>
                         <div className={"logout"}>
                             {account && <FontAwesomeIcon icon="sign-out-alt" className="sign-out"/> && <button onClick={deactivate} >Logout</button>}

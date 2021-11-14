@@ -220,10 +220,10 @@ const Select_token = () => {
     var select_default = "select token..";
 
     // image token
-    let img_ethereum = "../image/ethereum.png";
-    let img_beeba = "../image/beeba.png";
-    let img_mistersigz = "../image/mistersigz.png";
-    let img_default = "../image/fox.png";
+    let img_ethereum = "./image/Ethereum-token.png";
+    let img_beeba = "./image/Beeba-token.png";
+    let img_mistersigz = "./image/mistersigz-token.png";
+    let img_default = "./image/fox.png";
     // select function
     const select_token = (_tokenA, _tokenB) => {
         setselected_tokenA(_tokenA);
