@@ -33,62 +33,19 @@ function LifecycleDemo() {
  const Home = props =>{
      const { activateBrowserWallet, deactivate, account,chainId} = useEthers()
      const userBalance = useEtherBalance(account)
-
-
-     // window.ethereum.request({
-     //
-     //     id: 1,
-     //     jsonrpc: "2.0",
-     //     method: "wallet_switchEthereumChain",
-     //     params: [
-     //         {
-     //             chainId: "0x4",
-     //         }
-     //     ]
-     //
-     // });
-
-
-
-    //  const componentDidMount = async()=>{
-    //      const a = await contract.methods.Square(5,2).call();
-    //      const b = await contract.methods.Power(8).call();
-    //      this.setState ({ a,b });
-    //  }
-    // const [account,setaccount] = useState("")
-    // const connect = () =>{
-    //     provider.eth.requestAccounts();
-    //     const account = provider.eth.getAccounts()
-    //
-    //     provider.eth.getAccounts().then(accounts => {
-    //         setaccount(accounts)
-    //         return accounts[0];
-    //     })
-    //
-    //
-    // }
-    //  useEffect(() => {
-    //      const a = contract.methods.Square(5,2).call();
-    //      seta(a)
-    //      return () => {
-    //          console.log('will unmount');
-    //      }
-    //  }, [a]);
-
-
-
         return(
         <div>
             <div class ="container">
             <img class ="img-responsive"src = "image/beavera_paint.png"/>
                 <article>
                     <h2>Beaver on the move</h2>
-                    </article><article>
                     <p>The website is for educational purposes. not related to commerical.The numbers are simulated only.</p>
                 </article>
                 <div class="sl-button">
-                <Wallet class ="wallet-home"/> 
-                <a href="../Exchange/Exchange.js"><button  class="trade-button">Trade now </button></a>
+                    <Wallet class ="wallet-home"/>
+                    <a href="../Exchange/Exchange.js">
+                        <button  class="trade-button">Trade now </button>
+                    </a>
                 </div>
             </div>
             {/* <LifecycleDemo/>

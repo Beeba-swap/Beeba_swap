@@ -1,8 +1,7 @@
 .container{
     font-family: 'Itim', cursive;
     display: inline-block;
-    margin-top: 8%;
-    margin-left: 20%;
+    margin: 8% 20% 0;
 }
 .img-responsive{
     height: 400px;
@@ -29,8 +28,27 @@ article h2{
 }
 .sl-button{
     display: flex;
-      gap: 10px;
+      gap: 0.5rem;
 }
+.sl-button .trade-button{
+    font-size: 20px;
+    font-family: 'Itim', cursive;
+    text-align: center;
+    height:3rem;
+    width: 8rem;
+    margin: 1rem 0 0;
+    color: #06D85F;
+    border: 2px solid #06D85F;
+    background-color: #ffffff;
+    transition: 0.5s;
+
+}
+.sl-button .trade-button:hover{
+    color:#ffffff;
+    border: 2px solid #06D85F;
+    background-color: #06D85F;
+}
+
 .wallet-home{
     font-size: 8px;
 }

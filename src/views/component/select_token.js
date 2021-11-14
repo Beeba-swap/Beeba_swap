@@ -223,7 +223,7 @@ const Select_token = () => {
     let img_ethereum = "./image/Ethereum-token.png";
     let img_beeba = "./image/Beeba-token.png";
     let img_mistersigz = "./image/mistersigz-token.png";
-    let img_default = "./image/fox.png";
+    let img_default = "./image/default-token.png";
     // select function
     const select_token = (_tokenA, _tokenB) => {
         setselected_tokenA(_tokenA);

@@ -11,14 +11,14 @@ import {
     faStore, 
     faUserFriends,faUsers, faChartBar
     ,faArrowDown,
-    faArrowCircleDown,faDownload,faUser
+    faArrowCircleDown,faDownload,faUser,faListUl
 } from '@fortawesome/free-solid-svg-icons';
 import Wallet from './views/component/wallet';
 
 library.add(faBars, faSun, 
     faSignInAlt, faSignOutAlt, faHome, faUserAlt, 
     faDollarSign, faStore, faUserFriends,faUsers,faChartBar,faDollarSign,faArrowDown,faArrowCircleDown,
-    faDownload,faUser
+    faDownload,faUser,faListUl
 )
 
 class App extends Component {

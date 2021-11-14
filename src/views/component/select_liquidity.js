@@ -64,11 +64,11 @@ const Select_liquidity = () => {
         var _token = web3.utils.toWei(tokenA.toString(),"ether");
         var __token = web3.utils.toWei(tokenB.toString(),"ether");
         if(account == beeba.owner){
-            await contract_exchange_beeba.methods.Approve(__token).send({from:account});
+            await contract_beeba.methods.approve(exchange_beeba.address,__token).send({from:account});
             await contract_exchange_beeba.methods.deposit(__token).send({from:account,value:_token});
         }
         if(account == mistersigz.owner){
-            await contract_exchange_mistersigz.methods.Approve(__token).send({from:account});
+            await contract_mistersigz.methods.approve(exchange_mistersigz.address,__token).send({from:account});
             await contract_exchange_mistersigz.methods.deposit(__token).send({from:account,value:_token});
         }
     }

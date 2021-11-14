@@ -20,33 +20,61 @@ class Navbar extends Component {
         return (
             <Router>
                 <nav class="navbar-main">
+
                     <h2>App<img src="../image/beaver_listen_music.png"/> Beebaswap</h2>
                     <FontAwesomeIcon icon ="sun" className ="theme-mode"  />
-                    <Wallet class="nav-wallet"/>
-                    <div class="dropdown" id="dd">
-                        <button class="dropbtn">
-                    <FontAwesomeIcon icon ="bars" className ="menu-bars"  /> 
-                    </button>
-                        <div class="f-border">
-                        <div class ="dropdown-content" id="dropdown-c">
-                            <ul >
-                                <li>
-                                    <Link to="/"><FontAwesomeIcon icon ="home" className ="home"  /> Home</Link>
-                                </li>
-                                <li>
-                                    <Link to="/Viewer"><FontAwesomeIcon icon ="user-alt" className ="user"  /> Viewer</Link>
-                                </li>
-                                <li>
-                                    <Link to="/Exchange"><FontAwesomeIcon icon ="dollar-sign" className ="viewer"  /> Exchange</Link>
-                                </li>
-                                <li>
-                                    <Link to="/Liqiudtity"><FontAwesomeIcon icon ="store" className ="store"  /> Pools</Link>
-                                </li>
-                                <li>
-                                    <Link to="/Abouts"><FontAwesomeIcon icon ="user-friends" className ="about"  /> Abouts</Link>
-                                </li>
-                            </ul>
-                        </div>
+                    <Wallet/>
+
+                    <div class="dropdown">
+                        <button className="dropdown-button">
+                            <FontAwesomeIcon icon="list-ul" className="menu-bars"/>
+                        </button>
+                        <div className="block"></div>
+                        <div className="dropdown-content" id="dropdown-c">
+                            <div className="dropdown-menu">
+                                <ul>
+                                    <li>
+                                        <Link to="/">
+                                        <button>
+                                            <FontAwesomeIcon icon="home" className="icon"/>Home
+                                        </button>
+                                        </Link>
+                                    </li>
+                                    <li><hr/></li>
+                                    <li>
+                                        <Link to="/Viewer">
+                                            <button>
+                                                <FontAwesomeIcon icon="user-alt" className="icon"/> Viewer
+                                            </button>
+                                        </Link>
+                                    </li>
+                                    <li><hr/></li>
+                                    <li>
+                                        <Link to="/Exchange">
+                                            <button>
+                                                <FontAwesomeIcon icon="dollar-sign" className="icon"/> Exchange
+                                            </button>
+                                        </Link>
+                                    </li>
+                                    <li><hr/></li>
+                                    <li>
+                                        <Link to="/Liqiudtity">
+                                            <button>
+                                                <FontAwesomeIcon icon="store" className="icon"/> Pools
+                                            </button>
+                                        </Link>
+                                    </li>
+                                    <li><hr/></li>
+
+                                    <li>
+                                        <Link to="/Abouts">
+                                            <button>
+                                                <FontAwesomeIcon icon="user-friends" className="icon"/> Abouts
+                                            </button>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </nav>
