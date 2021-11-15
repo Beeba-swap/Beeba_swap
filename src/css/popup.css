@@ -19,7 +19,8 @@
     font-family: 'Itim', cursive;
     margin: 70px auto;
     background: rgb(229, 253, 255);
-    border-radius: 12rem;
+    padding: 20px;
+    border-radius: 2rem;
     width: 40%;
     position: relative;
     transition: all 5s ease-in-out;

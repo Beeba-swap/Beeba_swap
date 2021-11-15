@@ -8,6 +8,7 @@ import mistersigz from "../../abi/token_mistersigz.json";
 import exchange_mistersigz from "../../abi/exchange_mistersigz.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Wallet from '../component/wallet';
+import "../../css/popup.css";
 
 const Select_token = () => {
     //--------------------------------------------------------------
@@ -234,7 +235,7 @@ const Select_token = () => {
             case 1: return token_ether();
             case 2: return token_beeba();
             case 3: return token_mistersigz();
-            default: return select_default;
+            default: return (<div><input type={"text"} value={"Select token"}/></div>);
         }
     }
     const selection_tokenB = () => {
@@ -242,7 +243,7 @@ const Select_token = () => {
             case 1: return token_ether();
             case 2: return token_beeba();
             case 3: return token_mistersigz();
-            default: return select_default;
+            default: return (<div><input type={"text"} value={"Select token"}/></div>);
         }
     }
     const selected_img = (selected_token) => {
@@ -258,7 +259,7 @@ const Select_token = () => {
             case 1: return " Eth";
             case 2: return " Bee";
             case 3: return " Sigz";
-            case 0: return " Select a token";
+            case 0: return " Select";
         }
     }
     //--------------------------------------------------------------
@@ -302,42 +303,71 @@ const Select_token = () => {
         <div>
              <div className="swap-box">
                 <article>
-                    <h3><FontAwesomeIcon icon="dollar-sign" className="dollar-sign" />Exchange</h3>
+                    <h3><span><FontAwesomeIcon icon="dollar-sign" className="dollar-sign" /> Exchange</span> </h3>
                     <p>Trade token is an instance</p>
                     <hr></hr>
                 </article>
                 <div className="box">
                     <div class="from"><label>From</label></div>
-                        <div class="input-swap">
+                    <div className="input-swap">
                         {selection_tokenA()}
-                        <a href="#select tokenA" >
+                        <a href="#select tokenA">
                             <button className="button">
-                                <img src={selected_img(selected_tokenA)} />
-                                {token_name(selected_tokenA)}
+                                <img src={selected_img(selected_tokenA)}/>
+                                <p>
+                                    {token_name(selected_tokenA)} <FontAwesomeIcon icon="angle-down"/>
+                                </p>
                             </button>
                         </a>
                     </div>
+                    <div class="balance">
+                        {/*<p> Balance: {selected_tokenA == 0 && 0}*/}
+                        {/*    {selected_tokenA ==  1 && accountbalance_eth}{selected_tokenA ==  1 && !accountbalance_eth && "0"}*/}
+                        {/*    {selected_tokenA ==  2 && accountbalance_bee}{selected_tokenA ==  2 && !accountbalance_bee && "0"}*/}
+                        {/*    {selected_tokenA ==  3 && accountbalance_sigz}{selected_tokenA ==  3 && !accountbalance_sigz && "0"}*/}
+                        {/*</p>*/}
+                    </div>
                 </div>
 
-                <div> <button class="swap" onClick={swap_token}><FontAwesomeIcon icon="arrow-down" className="arrow-down" /></button></div>
+                <div> <button class="swap" onClick={swap_token}><FontAwesomeIcon icon="retweet" className="arrow-down" /></button></div>
 
                 <div className="box">
-                    <div><label>To</label></div>
-                    <a href="#select tokenB" >
+                    <div class="from"><label>To</label></div>
+                    <div className="input-swap">
                         {selection_tokenB()}
-                        <button className="button" >
-                            <img src={selected_img(selected_tokenB)} />
-                            {token_name(selected_tokenB)}
-                        </button>
-                    </a>
+                        <a href="#select tokenB" >
+                            <button className="button" >
+                                <img src={selected_img(selected_tokenB)} />
+                                <p>
+                                    {token_name(selected_tokenB)} <FontAwesomeIcon icon="angle-down"/>
+                                </p>
+                            </button>
+                        </a>
+                    </div>
+                        <div className="balance">
+                            <p> Balance: {selected_tokenB == 0 && 0}
+                                {/*{selected_tokenB == 1 && accountbalance_eth }{selected_tokenB == 1 && !accountbalance_eth && "0"}*/}
+                                {/*{selected_tokenB == 2 && accountbalance_bee}{selected_tokenB == 2 && !accountbalance_bee && "0"}*/}
+                                {/*{selected_tokenB == 3 && accountbalance_sigz}{selected_tokenB == 3 && !accountbalance_sigz && "0"}*/}
+                            </p>
+                        </div>
                 </div>
+                <div><p>Rate: {tokenA && tokenA/calcexchange(tokenA)} <span>{token_name(selected_tokenA)}/{token_name(selected_tokenB)}</span></p></div>
+
+
+
+
                 <div id="select tokenA" className="overlay">
                     <div className="popup">
                         <a className="close" href="#">&times;</a>
                         <div className="content">
-                            {selected_tokenB != 1 && <div><input type={"image"} src={img_ethereum} onClick={e => select_token(1, selected_tokenB)} /></div>}
-                            {selected_tokenB != 2 && <div><input type={"image"} src={img_beeba} onClick={e => select_token(2, selected_tokenB)} /></div>}
-                            {selected_tokenB != 3 && <div><input type={"image"} src={img_mistersigz} onClick={e => select_token(3, selected_tokenB)} /></div>}
+                            <h3>Select token</h3>
+                            <hr/>
+                            <div className="select-token">
+                                {selected_tokenB != 1 && <div className="token"><input type={"image"} src={img_ethereum} onClick={e => select_token(1, selected_tokenB)} /><p>Ethereum</p></div>}
+                                {selected_tokenB != 2 && <div className="token"><input type={"image"} src={img_beeba} onClick={e => select_token(2, selected_tokenB)} /><p>Beeba</p></div>}
+                                {selected_tokenB != 3 && <div className="token"><input type={"image"} src={img_mistersigz} onClick={e => select_token(3, selected_tokenB)} /><p>Mistersigz</p></div>}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -345,9 +375,13 @@ const Select_token = () => {
                     <div className="popup">
                         <a className="close" href="#">&times;</a>
                         <div className="content">
-                            {selected_tokenA != 1 && <div><input type={"image"} src={img_ethereum} onClick={e => select_token(selected_tokenA, 1)} /></div>}
-                            {selected_tokenA != 2 && <div><input type={"image"} src={img_beeba} onClick={e => select_token(selected_tokenA, 2)} /></div>}
-                            {selected_tokenA != 3 && <div><input type={"image"} src={img_mistersigz} onClick={e => select_token(selected_tokenA, 3)} /></div>}
+                            <h3>Select token</h3>
+                            <hr/>
+                            <div className="select-token">
+                                {selected_tokenA != 1 && <div className="token"><input type={"image"} src={img_ethereum} onClick={e => select_token(selected_tokenA, 1)} /><p>Ethereum</p></div>}
+                                {selected_tokenA != 2 && <div className="token"><input type={"image"} src={img_beeba} onClick={e => select_token(selected_tokenA, 2)} /><p>Beeba</p></div>}
+                                {selected_tokenA != 3 && <div className="token"><input type={"image"} src={img_mistersigz} onClick={e => select_token(selected_tokenA, 3)} /><p>Mistersigz</p></div>}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -355,7 +389,12 @@ const Select_token = () => {
                     {!account &&<Wallet/>}
                     {account && <input type={"submit"} value={status_exchange} onClick={swap_exchange}/>}
                 </div>
+
+
              </div>
+            <br/>
+            <br/>
+            <br/>
         </div>
     );
 }
