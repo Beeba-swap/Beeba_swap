@@ -386,7 +386,7 @@ const Select_token = () => {
                     </div>
                 </div>
                 <div className="exchange-swap">
-                    {!account &&<Wallet/>}
+                    <div className={"Wallet-condition"}>{!account &&<Wallet />}</div>
                     {account && <input type={"submit"} value={status_exchange} onClick={swap_exchange}/>}
                 </div>
 

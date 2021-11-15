@@ -60,7 +60,7 @@ class Navbar extends Component {
                                     <li>
                                         <Link to="/Liqiudtity">
                                             <button>
-                                                <FontAwesomeIcon icon="store" className="icon"/> Pools
+                                                <FontAwesomeIcon icon="store" className="icon"/> Liquidity
                                             </button>
                                         </Link>
                                     </li>

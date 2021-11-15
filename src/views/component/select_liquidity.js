@@ -55,10 +55,10 @@ const Select_liquidity = () => {
 
 
     // image token
-    let img_ethereum = "../image/ethereum.png";
-    let img_beeba = "../image/beeba.png";
-    let img_mistersigz = "../image/mistersigz.png";
-    let img_default = "../image/fox.png";
+    let img_ethereum = "./image/Ethereum-token.png";
+    let img_beeba = "./image/Beeba-token.png";
+    let img_mistersigz = "./image/mistersigz-token.png";
+    let img_default = "./image/default-token.png";
 
     const Add_liquidity = async deposit => {
         var _token = web3.utils.toWei(tokenA.toString(),"ether");
@@ -86,43 +86,29 @@ const Select_liquidity = () => {
         <div>
             <div className="swap-box">
                 <article>
-                    <h3><FontAwesomeIcon icon="dollar-sign" className="dollar-sign" />Liquidity</h3>
+                    <h3><FontAwesomeIcon icon="dollar-sign" className="dollar-sign"/>Liquidity</h3>
                     <p>invest with us just deposit with us</p>
-                    <hr></hr>
+                    <hr/>
                 </article>
-                    <div>
-                        <div className={"box"}>
-                            <label>
-                                <div>Ethereum:</div>
-                            </label>
-                        </div>
-                        <div>
-                            <input type={"number"} value={tokenA} onChange={e => {if(e.target.value <= 10**9){settokenA(e.target.value)}}} />
-                            <img src={img_ethereum} className={"token"}/>
-                        </div>
-                        <div>Supply :{supplyA}</div>
+                <div className={"input-liquidity"}>
+                    <input value={tokenA} onChange={e => {if(e.target.value <= 10**9){settokenA(e.target.value)}}}/>
+                    <img src={img_ethereum}/>
+                </div>
+                <div className={"to-add"}>
+                    <button className="swap"><FontAwesomeIcon icon="retweet"/></button>
+                </div>
+                <div className={"input-liquidity"}>
+                    <input value={tokenB} onChange={e => {if(e.target.value <= 10**9){settokenB(e.target.value)}}}/>
+                    {account == beeba.owner && <img src={img_beeba}/>}
+                    {account == mistersigz.owner && <img src={img_mistersigz}/>}
+                </div>
 
-                        <div><button><FontAwesomeIcon icon="arrow-down" className="arrow-down" /></button></div>
-                            <div className={"box"}>
-                                <label>
-                                    {account == beeba.owner  &&  <div>Beeba:{accountbalance_bee}</div>}
-                                    {account == mistersigz.owner  &&  <div>Mistersigz:{accountbalance_sigz}</div>}
-                                </label>
-                            </div>
-
-                            <div>
-                                <input type={"number"} value={tokenB} onChange={e => {if(e.target.value <= 10**9){settokenB(e.target.value)}}} />
-                                <div>
-                                    {account == beeba.owner && <img src={img_beeba} className={"token"}/>}
-                                    {account == mistersigz.owner && <img src={img_mistersigz} className={"token"}/>}
-                                </div>
-                                <div>Supply :{supplyB}</div>
-                            </div>
-                        <div>
-                            <input type={"submit"} value={"Add liquidity"} onClick={Add_liquidity}/>
-                            <input type={"submit"} value={"Withdraw"} onClick={Withdraw_liquidity}/>
-                        </div>
-                    </div>
+                <div className={"submit-liquidity"}>
+                    <input type={"submit"} value={"Add liquidity"} onClick={Add_liquidity}/>
+                </div>
+                <div className={"submit-liquidity"}>
+                    <input type={"submit"} value={"Withdraw"} onClick={Withdraw_liquidity}/>
+                </div>
             </div>
         </div>
     );

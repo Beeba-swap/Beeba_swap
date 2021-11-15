@@ -175,3 +175,6 @@ input token
     border: 8px solid #06D85F;
     border-radius: 3rem;
 }
+.swap-box .exchange-swap .Wallet-condition{
+    margin: 0 0 0 30%;
+}
