@@ -38,7 +38,7 @@ const Viewer = () =>{
                 <div class="container-viewer">
                         <article>
                             <h3>Will you join them?</h3>
-                            <p2>The website is for educational purposes.not related to commericial. The number are simulated only.</p2>
+                            <p2>The website is <span style={{fontWeight:"600"}}>for educational</span> purposes.not related to commericial. The number are simulated only.</p2>
                         </article>
                         <div class="bottom-box">
                             <div className="user-count"><FontAwesomeIcon icon="gas-pump" className="user-c"/>

@@ -85,6 +85,7 @@
     border-radius: 2rem;
 }
 .dropdown-content button{
+    cursor: pointer;
     text-align: left;
     background-color: #ffffff;
     border: #ffffff;
@@ -99,6 +100,7 @@
     transition: 0.6s;
 }
 .dropdown-content button:hover{
+    cursor: pointer;
     background-color: #06D85F;
     border: 2px solid #06D85F;
     color: white;
@@ -109,16 +111,9 @@
     border: 2px solid  white;
     color: #06D85F;
 }
-.dropdown-content p{
-    margin: 0 0 0 0;
-}
+
 .dropdown-content hr{
     margin-left: 1rem;
-
-}
-
-.navbar-main .dropdown {
-    margin-left: 2%;
 }
 
 .navbar-main .dropdown{

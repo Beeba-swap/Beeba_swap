@@ -24,7 +24,7 @@ library.add(faBars, faSun,
 class App extends Component {
     render() {
         return (
-            <div>
+            <div class="Main">
                 <Navbar />
 
             </div>
