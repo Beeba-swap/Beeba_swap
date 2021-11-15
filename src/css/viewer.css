@@ -13,70 +13,107 @@
     padding: 6px;
     width: auto;
 }
+.container-viewer span{
+    color: #0BAB64;
+}
 
 article h3{
     font-family: 'Caveat', cursive;
-    font-size: 44px;
+    font-size: 48px;
 }
 
 .container-viewer .bottom-box{
-    margin-top: 6%;
+    margin: 8% 0 0;
     font-family: 'Itim', cursive;
     font-size: 52px;
     width: 100%;
+    height: auto;
     display:flex;
     justify-content: center;
     gap: 100px;
 }
-.bottom-box .user-count article h4{
+.bottom-box article h4{
     margin-top: 0;
     margin-bottom: 0;
 }
-.bottom-box .viewer-count article p{
-    font-size: 18px;
-    margin-top: 0;
+.bottom-box article p{
+    font-size: 20px;
+    margin: 0.5rem 0 0;
 }
-.bottom-box .trade-count article p{
-    font-size: 18px;
-    margin-top: 0;
-}
-.bottom-box .user-count article p{
-    font-size: 18px;
-    margin-top: 0;
-}
-.viewer-count article h4{
-    margin-top: 0;
-    margin-bottom: 0;
-}
-.trade-count article h4{
-    margin-top: 0;
-    margin-bottom: 0;
-}
+
 .user-count {
-    border-style:solid;
-    border-color:#0BAB64 ;
+    width: 12%;
+    border:2px solid #06D85F;
+    background-color: #ffffff;
     align-self: flex-end;
     border-radius: 8%;
     padding: 36px;
-    margin-top: 6%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .viewer-count{
+    width: 12%;
     border-style:solid;
-    border-color:#0BAB64 ;
+    border-color:#06D85F ;
     align-self: flex-start;
     border-radius: 8%;
     padding: 36px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 .trade-count{
+    margin: 2% 0 0;
+    width: 12%;
     border-style:solid;
-    border-color:#0BAB64 ;
+    border-color:#06D85F ;
     align-self: flex-end;
     border-radius: 8%;
-    padding: 40px 44px;
+    padding: 46px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
+.user-count:hover{
+    width: 16%;
+    border:2px solid #06D85F;
+    background-color: #06D85F;
+    color: #ffffff;
+    transition: 0.8s;
+}
+.user-count:hover .user-c{
+    color: #ffffff;
+}
+.user-count:hover span{
+    color: #ffffff;
+    text-decoration: underline;
+}
+.viewer-count:hover{
+    width: 16%;
+    border:2px solid #06D85F;
+    background-color: #06D85F;
+    color: #ffffff;
+    transition: 0.8s;
+}
+.viewer-count:hover .viewer-c{
+    color: #ffffff;
+}
+.viewer-count:hover span{
+    color: #ffffff;
+    text-decoration: underline;
+}
+.trade-count:hover{
+    width: 16%;
+    border:2px solid #06D85F;
+    background-color: #06D85F;
+    color: #ffffff;
+    transition: 0.8s ease-in-out;
+}
+.trade-count:hover .trade-c{
+    color: #ffffff;
+}
+.trade-count:hover span{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+
 .user-c,.viewer-c ,.trade-c{
-    color: #0BAB64;
+    color: #06D85F;
 }
