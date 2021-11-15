@@ -7,7 +7,7 @@ import Wallet from '../component/wallet'
 import Exchange from "../component/exchange";
 import '../../css/Home.css'
 import '../../css/trade-button.css'
-
+import {Route, Router, Switch} from "react-router-dom";
 
 const Web3 = require('web3');
 const rpcURL = 'https://rinkeby.infura.io/v3/d3caf1eed4c3468b949d41bd52059f06';
@@ -33,24 +33,26 @@ function LifecycleDemo() {
  const Home = props =>{
      const { activateBrowserWallet, deactivate, account,chainId} = useEthers()
      const userBalance = useEtherBalance(account)
+     function toExchange() {
+         props.history.push('/Exchange')
+     }
         return(
-        <div>
-            <div class ="container">
-            <img class ="img-responsive"src = "image/beavera_paint.png"/>
-                <article>
-                    <h2>Beaver on the move</h2>
-                    <p>The website is for educational purposes. not related to commerical.The numbers are simulated only.</p>
-                </article>
-                <div class="sl-button">
-                    <Wallet class ="wallet-home"/>
-                    <a href="../Exchange/Exchange.js">
-                        <button  class="trade-button">Trade now </button>
-                    </a>
-                </div>
-            </div>
-            {/* <LifecycleDemo/>
+                <div>
+                    <div className="container">
+                        <img className="img-responsive" src="image/beavera_paint.png"/>
+                        <article>
+                            <h2>Beaver on the move</h2>
+                            <p>The website is for educational purposes. not related to commerical.The numbers are
+                                simulated only.</p>
+                        </article>
+                        <div className="sl-button">
+                            <Wallet class="wallet-home"/>
+                            <button className="trade-button" onClick={toExchange}>Trade now</button>
+                        </div>
+                    </div>
+                    {/* <LifecycleDemo/>
             <Exchange /> */}
-        </div>
+                </div>
         );
 
 }

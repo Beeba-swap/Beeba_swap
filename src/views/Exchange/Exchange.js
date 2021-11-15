@@ -1,12 +1,11 @@
 import React, {useEffect, useState} from "react";
 import { useEtherBalance, useEthers, ChainId } from '@usedapp/core'
-import _Exchange from "../component/exchange";
+import Select_token from "../component/select_token.js";
 
 const Exchange = () => {
   return(
-
       <div>
-          <_Exchange/>
+          <Select_token/>
       </div>
   );
 }
