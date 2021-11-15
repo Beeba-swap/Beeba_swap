@@ -1,55 +1,180 @@
-.popup {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+.swap-box span{
+    color: #06D85F;
 }
-
-/* The actual popup */
-.popup .popuptext {
-    visibility: hidden;
-    width: 160px;
-    background-color: #555;
-    color: #fff;
+.swap-box{
+    margin: 4% auto 0;
+    font-family: 'Itim', cursive;
+    width: 28%;
+    /* margin: 8% 26% 0 ; */
+    border-radius:  8%;
     text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
+    padding-bottom: 32px;
+    border: 2px solid #06D85F;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.swap-box article p{
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 24px;
+}
+.swap-box article h3{
+    margin: 4% 6% 4%;
+}
+hr{
+    border-color: #06D85F;
+    width: 80%;
+    opacity: 35%;
 }
 
-/* Popup arrow */
-.popup .popuptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+.box {
+    font-family: 'Itim', cursive;
+    color: #000000;
+    border-radius: 16px;
+    border: 2px solid #06D85F;
+    background-color: #ffffff;
+    width: 80%;
+    margin: 1.5rem 8%;
+    transition: 0.4s;
+    justify-content: center;
+}
+.box:hover{
+    color: #ffffff;
+    background-color: #06D85F;
 }
 
-/* Toggle this class - hide and show the popup */
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
+.box label{
+    float:left;
+    font-size: 24px;
+    margin: 2% 0 0 4%;
 }
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+.box img{
+    width: 52px;
+    height: auto;
+    border-radius: 36px;
 }
+.box .from {
+    display: flex;
+    flex-direction: row;
+}
+/*-----------------------------
+input token
+------------------------------*/
+.box .input-swap{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.box .input-swap p{
+    color: black;
+}
+.box .input-swap a{
+    color: #000000;
+    text-decoration: none;
+    margin: -4% 0 0 12%;
+}
+.box .input-swap button{
+    background-color: transparent;
+    font-family: 'Itim', cursive;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border: none;
+    color: #000000;
+    text-decoration: none;
+}
+.box .input-swap button p{
+    padding: 0 0 0 4px;
+}
+.box:hover .input-swap button img {
+    padding: 2px;
+    background-color: #ffffff;
+}
+.box:hover .input-swap button p{
+    color: #ffffff;
+}
+.box input[type=number],
+.box input[type=text]{
+    font-family: 'Itim', cursive;
+    margin: 1rem 1rem 0;
+    padding: 0 0 0 8%;
+    width: 100%;
+    height: 2rem;
+    border: none;
+    border-bottom: 1px solid #06D85F;
+    border-radius: 1rem;
+    background-color: #ffffff;
+    outline: none;
+}
+.box input::-webkit-outer-spin-button,
+.box input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.box .balance{
+    text-align: right;
+    padding: 0 12% 0 0;
+}
+/*-------------------------------------*/
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
+.swap-box .swap{
+    cursor: pointer;
+    font-size: 24px;
+    padding: 8px;
+    color: white;
+    background-color: #06D85F;
+    border: 2px solid #06D85F;
+    border-radius: 2rem;
+}
+.swap-box .swap:hover{
+    padding: 12px;
+    color: #06D85F;
+    background-color: #ffffff;
+    transition: 0.5s ease-in-out;
+}
+.swap-box .exchange-swap input{
+    font-family: 'Itim', cursive;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 600;
+    color: #06D85F;
+    border: 2px solid #06D85F;
+    border-radius: 2rem;
+    width: 60%;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    letter-spacing: 2px;
+    transition: 0.8s ease-in-out;
+}
+.swap-box .exchange-swap input:hover{
+    padding: 1rem;
+    width: 80%;
+    color: #ffffff;
+    border: 1px solid #707070;
+    background-color: #06D85F;
+    letter-spacing: 20px;
+}
+.swap-box .popup .content .select-token{
+    padding: 1rem;
+}
+.swap-box .popup .content .select-token input{
+    width: 100%;
+    height: auto;
+}
+.swap-box .popup .content .select-token .token{
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 8% 0;
+}
+.swap-box .popup .content .select-token .token p{
+    cursor: pointer;
+    font-size: 28px;
+    margin: 1rem 1rem 0;
+}
+.swap-box .popup .content .select-token .token:hover
+{
+    border: 8px solid #06D85F;
+    border-radius: 3rem;
+}
+.swap-box .exchange-swap .Wallet-condition{
+    margin: 0 0 0 30%;
 }

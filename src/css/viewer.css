@@ -1,0 +1,119 @@
+
+.container-viewer{
+    margin-left: 12%;
+    width: 80%;
+    height: 20%;
+    text-align: center;
+}
+
+.container-viewer article p2{
+    font-family: 'Itim', cursive;
+    font-size: 32px;
+    text-align: center;
+    padding: 6px;
+    width: auto;
+}
+.container-viewer span{
+    color: #0BAB64;
+}
+
+article h3{
+    font-family: 'Caveat', cursive;
+    font-size: 52px;
+}
+
+.container-viewer .bottom-box{
+    margin: 8% 0 0;
+    font-family: 'Itim', cursive;
+    font-size: 52px;
+    width: 100%;
+    height: auto;
+    display:flex;
+    justify-content: center;
+    gap: 100px;
+}
+.bottom-box article h4{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.bottom-box article p{
+    font-size: 20px;
+    margin: 0.5rem 0 0;
+}
+
+.user-count {
+    width: 12%;
+    border:2px solid #06D85F;
+    background-color: #ffffff;
+    align-self: flex-end;
+    border-radius: 8%;
+    padding: 36px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.viewer-count{
+    width: 12%;
+    border-style:solid;
+    border-color:#06D85F ;
+    align-self: flex-start;
+    border-radius: 8%;
+    padding: 36px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.trade-count{
+    margin: 2% 0 0;
+    width: 12%;
+    border-style:solid;
+    border-color:#06D85F ;
+    align-self: flex-end;
+    border-radius: 8%;
+    padding: 46px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.user-count:hover{
+    width: 16%;
+    border:2px solid #06D85F;
+    background-color: #06D85F;
+    color: #ffffff;
+    transition: 0.8s;
+}
+.user-count:hover .user-c{
+    color: #ffffff;
+}
+.user-count:hover span{
+    color: #ffffff;
+    text-decoration: underline;
+}
+.viewer-count:hover{
+    width: 16%;
+    border:2px solid #06D85F;
+    background-color: #06D85F;
+    color: #ffffff;
+    transition: 0.8s;
+}
+.viewer-count:hover .viewer-c{
+    color: #ffffff;
+}
+.viewer-count:hover span{
+    color: #ffffff;
+    text-decoration: underline;
+}
+.trade-count:hover{
+    width: 16%;
+    border:2px solid #06D85F;
+    background-color: #06D85F;
+    color: #ffffff;
+    transition: 0.8s ease-in-out;
+}
+.trade-count:hover .trade-c{
+    color: #ffffff;
+}
+.trade-count:hover span{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+
+.user-c,.viewer-c ,.trade-c{
+    color: #06D85F;
+}

@@ -1,0 +1,111 @@
+.token{
+    width: 80px;
+    height: 80px;
+}
+.Exchange-together {
+    width: 70%;
+    margin: 2% 15% 0 ;
+    padding: 1.5rem;
+    border: 2px solid #06D85F;
+    border-radius: 32px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.Exchange-together img{
+    width: 100px;
+    height: 100px;
+    margin: 2% 0 0;
+}
+.Exchange-together .co-op{
+    color: #06D85F;
+    padding: 8px;
+    border-radius: 50%;
+    border: 2px solid #06D85F;
+    margin: 4% 1% 0;
+}
+.Exchange-together .Eth-Bee{
+    font-family: 'Itim', cursive;
+    font-size: 28px;
+    display: flex;
+    flex-direction: row;
+}
+.Exchange-together .Supply-call{
+    display: flex;
+    flex-direction: column;
+    margin: 0 2rem;
+    text-align: center;
+}
+.Exchange-together .Supply-call h4{
+
+}
+.Exchange-together .Supply-call .coin{
+    color: #06D85F;
+    padding: 0 2px;
+}
+.Exchange-together .Supply-call p{
+    margin: -4% 0 0;
+}
+.Exchange-together .Supply-call button{
+    color: #06D85F;
+    font-size: 20px;
+    border: 2px solid #06D85F;
+    background-color: #ffffff;
+    padding: 20px 16px;
+    border-radius: 4rem;
+    text-align: center;
+    margin: 40% 0 0;
+}
+.Supply-call button:hover{
+    color: white;
+    background-color: #06D85F;
+}
+.swap-box img{
+    height: auto;
+    width: 60px;
+}
+.swap-box h3{
+    color: #06D85F;
+}
+.swap-box .input-liquidity{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+.swap-box .input-liquidity img{
+    width: 72px;
+    height: 72px;
+    margin: 2% 0 0 1%;
+}
+.swap-box .input-liquidity input{
+    font-family: 'Itim', cursive;
+    font-size: 24px;
+    width: 50%;
+    border: 2px solid #06D85F;
+    border-radius: 32px;
+    padding: 2% 8%;
+    margin: 4% 0;
+}
+.swap-box .submit-liquidity input{
+    font-family: 'Itim', cursive;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 600;
+    color: #06D85F;
+    border: 2px solid #06D85F;
+    border-radius: 2rem;
+    width: 60%;
+    padding: 0.5rem;
+    background-color: #ffffff;
+    letter-spacing: 2px;
+    transition: 0.8s ease-in-out;
+    margin: 4% 0 0 ;
+}
+
+.swap-box .submit-liquidity input:hover{
+    padding: 1rem;
+    width: 80%;
+    color: #ffffff;
+    border: 1px solid #707070;
+    background-color: #06D85F;
+    letter-spacing: 16px;
+}

@@ -7,3 +7,7 @@ h3{font-size: 28px;}
 h4{font-size: 24px;}
 h5{font-size: 20px;}
 h6{font-size: 16px;}
+
+.Main {
+    overflow-x: hidden;
+}

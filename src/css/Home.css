@@ -1,0 +1,54 @@
+.container{
+    font-family: 'Itim', cursive;
+    display: inline-block;
+    margin: 8% 20% 0;
+}
+.img-responsive{
+    height: 400px;
+    width: auto;
+    float: left;
+}
+
+article{
+    height: 4%;
+    width: 100%;
+    margin-top: 2%;
+}
+article h2{
+    margin-top: 6%;
+    margin-right: 0%;
+    text-align: center;
+}
+p{
+    font-size: 20px;
+}
+article h2{
+    font-family: 'Caveat', cursive;
+    font-size: 48px;
+}
+.sl-button{
+    display: flex;
+      gap: 0.5rem;
+}
+.sl-button .trade-button{
+    font-size: 20px;
+    font-family: 'Itim', cursive;
+    text-align: center;
+    height:3rem;
+    width: 8rem;
+    margin: 1rem 0 0;
+    color: #06D85F;
+    border: 2px solid #06D85F;
+    background-color: #ffffff;
+    transition: 0.5s;
+
+}
+.sl-button .trade-button:hover{
+    color:#ffffff;
+    border: 2px solid #06D85F;
+    background-color: #06D85F;
+}
+
+.wallet-home{
+    font-size: 8px;
+}

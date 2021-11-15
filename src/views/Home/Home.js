@@ -5,7 +5,9 @@ import { formatEther } from '@ethersproject/units'
 import detectEthereumProvider from '@metamask/detect-provider'
 import Wallet from '../component/wallet'
 import Exchange from "../component/exchange";
-
+import '../../css/Home.css'
+import '../../css/trade-button.css'
+import {Route, Router, Switch} from "react-router-dom";
 
 const Web3 = require('web3');
 const rpcURL = 'https://rinkeby.infura.io/v3/d3caf1eed4c3468b949d41bd52059f06';
@@ -31,56 +33,26 @@ function LifecycleDemo() {
  const Home = props =>{
      const { activateBrowserWallet, deactivate, account,chainId} = useEthers()
      const userBalance = useEtherBalance(account)
-
-
-     // window.ethereum.request({
-     //
-     //     id: 1,
-     //     jsonrpc: "2.0",
-     //     method: "wallet_switchEthereumChain",
-     //     params: [
-     //         {
-     //             chainId: "0x4",
-     //         }
-     //     ]
-     //
-     // });
-
-
-
-    //  const componentDidMount = async()=>{
-    //      const a = await contract.methods.Square(5,2).call();
-    //      const b = await contract.methods.Power(8).call();
-    //      this.setState ({ a,b });
-    //  }
-    // const [account,setaccount] = useState("")
-    // const connect = () =>{
-    //     provider.eth.requestAccounts();
-    //     const account = provider.eth.getAccounts()
-    //
-    //     provider.eth.getAccounts().then(accounts => {
-    //         setaccount(accounts)
-    //         return accounts[0];
-    //     })
-    //
-    //
-    // }
-    //  useEffect(() => {
-    //      const a = contract.methods.Square(5,2).call();
-    //      seta(a)
-    //      return () => {
-    //          console.log('will unmount');
-    //      }
-    //  }, [a]);
-
-
-
+     function toExchange() {
+         props.history.push('/Exchange')
+     }
         return(
-        <div>
-            <Wallet/>
-            <LifecycleDemo/>
-            <Exchange />
-        </div>
+                <div>
+                    <div className="container">
+                        <img className="img-responsive" src="image/beavera_paint.png"/>
+                        <article>
+                            <h2>Beaver on the move</h2>
+                            <p>The website is for educational purposes. not related to commerical.The numbers are
+                                simulated only.</p>
+                        </article>
+                        <div className="sl-button">
+                            <Wallet class="wallet-home"/>
+                            <button className="trade-button" onClick={toExchange}>Trade now</button>
+                        </div>
+                    </div>
+                    {/* <LifecycleDemo/>
+            <Exchange /> */}
+                </div>
         );
 
 }

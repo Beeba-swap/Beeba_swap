@@ -1,0 +1,62 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup {
+    font-family: 'Itim', cursive;
+    margin: 70px auto;
+    background: rgb(229, 253, 255);
+    padding: 20px;
+    border-radius: 2rem;
+    width: 40%;
+    position: relative;
+    transition: all 5s ease-in-out;
+}
+
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #06D85F;
+}
+.popup .close:hover {
+    color: #000000;
+}
+.popup .content {
+    max-height: 80%;
+    overflow: auto;
+    z-index: 100;
+    font-family: 'Itim', cursive;
+}
+.popup .content h1,
+.popup .content h2,
+.popup .content h3,
+.popup .content h4
+{
+    padding: 1rem 0;
+    text-align: center;
+    color: rgb(40, 13, 95);
+    font-weight: 600;
+    font-family: 'Itim', cursive;
+}
+.popup span{
+    color: #06D85F;
+    font-weight: 600;
+}

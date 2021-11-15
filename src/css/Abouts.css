@@ -1,0 +1,105 @@
+.Border{
+    border: 2px solid #0BAB64;
+    border-width: 10%;
+    width: 180px;
+    height: max-content;
+    border-radius: 20px;
+    background-color: #0BAB64;
+    text-align: center;
+    color: white;
+    font-family: Caveat;
+    font-size: 24px;
+  }
+img{
+  padding: 5px;
+  width: 96%;
+  border-radius: 20%;
+  justify-content: center;
+}
+.f1{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    flex-wrap: wrap;
+    margin-top: 2%;
+  }
+.f2{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top:5%;
+    flex-wrap: wrap;
+}
+.f3{
+  display: flex;
+  justify-content: start;
+  gap: 5%;
+  margin-top:5%;
+  flex-wrap: wrap;
+}
+.font{
+  font-size: 60px;
+  font-family: Caveat;
+  margin-left: 10%;
+}
+.left{
+  float: left;
+  width: 50%;
+  padding: 15px;
+  
+}
+.button_about {
+  background-color: #0BAB64;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20px;
+  margin-top: 5%;
+}
+.center{
+  text-align: center;
+  height: 100px;
+  margin-left: 30%;
+}
+.header{
+  font-size: 40px;
+  font-family: Itim;
+}
+.image{
+  width: 140px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  margin-left: 30%;
+  gap:40%;
+}
+.block2{
+  width:50%;
+  height: 100%;
+}
+.profile{
+  width: 160px;
+  height: 160px;
+}
+.img{
+  width: 20%;
+  height: 20%;
+}
+.txt{
+  font-family: Itim;
+  font-size: 20px;
+}
+.button_about a{
+  align-items: baseline;
+  text-decoration: none;
+  color: black;
+}
+.border{
+  border-right:  2px solid gray;
+}
