@@ -103,21 +103,19 @@ const Select_token = () => {
                 case 2 :
                     //sell token
                     if(selected_tokenB == 1 && parseFloat(calcexchange(tokenA),10) < parseFloat( supply_ethbee,10)){
-                        await contract_exchange_beeba.methods.Approve(__token).send({from:account}) ;
+                        await contract_beeba.methods.approve(exchange_beeba.address,__token).send({from:account}) ;
                         await contract_exchange_beeba.methods.selltoken(__token,___token).send({from:account});
                     }
                     else {alert("High token to exchange!")}
-
+                    //swap beeba->mistersigz
                     if(selected_tokenB == 3 && calcexchange(tokenA) < supply_sigz){
-                        await contract_exchange_beeba.methods.Approve(__token).send({from:account});
-                        await contract_mistersigz.methods.approvefrom(exchange_mistersigz.address,exchange_beeba.address,___token).send({from:account});
+                        await contract_beeba.methods.approve(exchange_beeba.address,__token).send({from:account});
                         await contract_exchange_beeba.methods.swaptoken(
                             exchange_mistersigz.address,
-                            mistersigz.address,
                             ___token,
                             __token,
                             __token__
-                        ).send({from:account});
+                        ).send({from:account})
                     }
                     else {alert("High token to exchange!")}
 
@@ -126,22 +124,20 @@ const Select_token = () => {
                 case 3 :
                     //sell token
                     if(selected_tokenB == 1 && parseFloat(calcexchange(tokenA),10) < parseFloat(supply_ethsigz,10)){
-                        await contract_exchange_mistersigz.methods.Approve(__token).send({from:account});
+                        await contract_mistersigz.methods.approve(exchange_mistersigz.address,__token).send({from:account});
                         await contract_exchange_mistersigz.methods.selltoken(__token,___token).send({from:account});
                     }
                     else {alert("High token to exchange!")}
-
+                    //swap mistersig->beeba
                     // console.log(calcexchange(tokenA)+" "+supply_bee)
                     if(selected_tokenB == 2 && parseFloat(calcexchange(tokenA),10) < parseFloat(supply_bee,10)){
-                        await contract_exchange_mistersigz.methods.Approve(__token).send({from:account});
-                        await contract_beeba.methods.approvefrom(exchange_beeba.address,exchange_mistersigz.address,___token).send({from:account});
+                        await contract_mistersigz.methods.approve(exchange_mistersigz.address,__token).send({from:account});
                         await contract_exchange_mistersigz.methods.swaptoken(
-                                exchange_beeba.address,
-                                beeba.address,
-                                ___token,
-                                __token,
-                                __token__
-                              ).send({from:account});
+                            exchange_beeba.address,
+                            ___token,
+                            __token,
+                            __token__
+                        ).send({from:account});
                     }
                     else {alert("High token to exchange!")}
 
