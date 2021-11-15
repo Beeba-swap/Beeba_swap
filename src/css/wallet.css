@@ -41,7 +41,7 @@
 }
 .sign-out {
     position: absolute;
-    margin: 0.8rem 0 0 -2rem;
+    margin: 0.7% 0 0 -2rem;
     color: #06D85F;
     font-size: 20px;
     background-color: #ffffff;
@@ -49,6 +49,9 @@
     border-radius: 2rem;
     border: 2px solid #06D85F;
     z-index: 9;
+}
+.sign-out-div{
+    position: fixed;
 }
 
 .content img{
@@ -131,7 +134,4 @@
     color: #ffffff;
     border:2px solid #06D85F;
     background-color: #06D85F;
-}
-.logout .sign-out{
-    margin: -0.4rem 0 0;
 }

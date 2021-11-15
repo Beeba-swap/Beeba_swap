@@ -4,90 +4,69 @@ import React from "react";
 import '../../css/Abouts.css'
 const Abouts = () =>{
     return(
-        <div>
-            <div class = 'f3'>
-                <div class = 'left'>
-                    <div class = 'font'>Ourteam!</div>
-                        <div class = 'f1'>
-                                    <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
-                                        </div>
-                                        <div>Narodom Yatnimit</div>
-                                        <div>System Analyst</div>
-                                    </div>
-                                    <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
-                                        </div>
-                                        <div>Warat Yenjaiprasert</div>
-                                        <div>Developer BackEnd</div>
-                                    </div>
-                            </div>
-                            <div class = 'f2'>
-                                    <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
-                                        </div>
-                                        <div>Korawit Moonsarn</div>
-                                        <div>System Analyst</div>
-                                    </div>
-                                    <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
-                                        </div>
-                                        <div>Korawit Moonsarn</div>
-                                        <div>System Analyst</div>
-                                    </div>
-                                    <div class = 'Border'>
-                                        <div class = 'profile'>
-                                            <img src = 'image/Beaver.png'></img>
-                                        </div>
-                                        <div>Korawit Moonsarn</div>
-                                        <div>System Analyst</div>
+        <div className={"About-our"}>
+            <div className={"Team"}><h2>Our Team!</h2></div>
+            <div className={"Education"}><h2>For Education!</h2></div>
+            <div className='left'>
+                    <div className='Border'>
+                        <div className='profile'>
+                            <img src='image/beeba.png'></img>
                         </div>
+                        <div>Narodom Yatnimit</div>
+                        <div>System Analyst</div>
+                    </div>
+                    <div className='Border'>
+                        <div className='profile'>
+                            <img src='image/mistersigz.png'></img>
+                        </div>
+                        <div>Warat Yenjaiprasert</div>
+                        <div>Developer BackEnd</div>
+                    </div>
+                    <div className='Border'>
+                        <div className='profile'>
+                            <img src='image/park.jpg'></img>
+                        </div>
+                        <div>Korawit Moonsarn</div>
+                        <div>Developer FrontEnd</div>
+                    </div>
+                    <div className='Border'>
+                        <div className='profile'>
+                            <img src='image/195323.jpg'></img>
+                        </div>
+                        <div>Setthathorn Somrug</div>
+                        <div>Developer FrontEnd</div>
+                    </div>
+                    <div className='Border'>
+                        <div className='profile'>
+                            <img src='image/nam.jpg'></img>
+                        </div>
+                        <div>Rinrada Kunjobmueng</div>
+                        <div>Developer FrontEnd</div>
                     </div>
                 </div>
-                <div class = 'border'></div>
-                <div>
-                    <div class = 'center'>
-                        <div class = 'header'>
-                            For Education!!
-                        </div>
+                <div className='horizon'></div>
+                <div className={"right"}>
+                    <div className={"explain"}>
+                        <h1 className={"header"}><span><FontAwesomeIcon icon="cube"/> </span>Blockchain..!</h1>
+                        <p>This project make for to learn about blockchain;<br/>Defult project :</p>
+                        <a href='./project_blockchain_beebaswap.pdf'>
+                            <button>
+                                <FontAwesomeIcon icon="arrow-circle-down"/> Beeba-Blockchain.pdf
+                            </button>
+                        </a>
                     </div>
-                    <div class = 'txt'>
-                        <div> 
-                            This project make for to learn about blockchain;
-                        </div>
-                        <div> 
-                            Defult project :
-                        </div>
+                    <h3 className={"usage"}>Usage..!</h3>
+                    <div className={"image-usage"}>
+                        <img src='image/iconcss.png'></img>
+                        <img src='image/icongithub.png'></img>
+                        <img src='image/iconinfura2.png'></img>
                     </div>
-                    <div class = 'center'>
-                        <div class='button_about'>
-                        <a href = './Doc1.docx'> <FontAwesomeIcon icon ="arrow-circle-down"/> Beeba-Blockchain.docx</a>
-                        </div>
-                    </div>
-                    <div class = 'center'>
-                        <div class = 'header'>
-                            Usage
-                        </div>
-                    </div>
-                    <div class = 'center'>
-                        <div class = 'image'>
-                            <img src = 'image/iconcss.png'></img>
-                            <img src = 'image/icongithub.png'></img>
-                            <img src = 'image/iconinfura2.png'></img>
-                            
-                        </div>
-                        <div class = 'image'>
-                            <img src = 'image/iconmetamask.png'></img>
-                            <img src = 'image/iconreact.png'></img>
-                            <img src = 'image/iconRemix.png'></img>
-                        </div>
+                    <div className='image-usage'>
+                        <img src='image/iconmetamask.png'></img>
+                        <img src='image/iconreact.png'></img>
+                        <img src='image/iconRemix.png'></img>
                     </div>
                 </div>
-            </div> 
         </div>
     );
 }

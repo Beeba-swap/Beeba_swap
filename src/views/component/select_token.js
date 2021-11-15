@@ -9,6 +9,7 @@ import exchange_mistersigz from "../../abi/exchange_mistersigz.json";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Wallet from '../component/wallet';
 import "../../css/popup.css";
+import {formatEther} from "@ethersproject/units";
 
 const Select_token = () => {
     //--------------------------------------------------------------
@@ -60,7 +61,6 @@ const Select_token = () => {
     var [accountbalance_bee, setaccountbalance_bee] = useState(parseFloat(0,10)); // beeba
     var [accountbalance_sigz, setaccountbalance_sigz] = useState(parseFloat(0,10)); // mistersigz
     //calculate token
-
 
     // console.log(accountbalance_eth + " " + accountbalance_bee + " " + accountbalance_sigz)
 
@@ -297,7 +297,22 @@ const Select_token = () => {
             </span>
         );
     }
-
+    const accountcall = (_token) =>{
+        if(window.ethereum){
+            if(account){
+                console.log(accountbalance_eth + " " +accountbalance_bee +" " +accountbalance_sigz)
+                switch (_token){
+                    case 1 :
+                        return  0 ;break;
+                    case 2 :
+                        if(accountbalance_bee){return  accountbalance_bee}break;
+                    case 3:
+                        if(accountbalance_sigz){return  accountbalance_sigz}break;
+                    default:return 0;
+                }
+            }
+        }
+    }
     balancecall();
     return (
         <div>
@@ -321,11 +336,8 @@ const Select_token = () => {
                         </a>
                     </div>
                     <div class="balance">
-                        {/*<p> Balance: {selected_tokenA == 0 && 0}*/}
-                        {/*    {selected_tokenA ==  1 && accountbalance_eth}{selected_tokenA ==  1 && !accountbalance_eth && "0"}*/}
-                        {/*    {selected_tokenA ==  2 && accountbalance_bee}{selected_tokenA ==  2 && !accountbalance_bee && "0"}*/}
-                        {/*    {selected_tokenA ==  3 && accountbalance_sigz}{selected_tokenA ==  3 && !accountbalance_sigz && "0"}*/}
-                        {/*</p>*/}
+                        <p> Balance: {accountcall(selected_tokenA)}
+                        </p>
                     </div>
                 </div>
 
@@ -345,10 +357,7 @@ const Select_token = () => {
                         </a>
                     </div>
                         <div className="balance">
-                            <p> Balance: {selected_tokenB == 0 && 0}
-                                {/*{selected_tokenB == 1 && accountbalance_eth }{selected_tokenB == 1 && !accountbalance_eth && "0"}*/}
-                                {/*{selected_tokenB == 2 && accountbalance_bee}{selected_tokenB == 2 && !accountbalance_bee && "0"}*/}
-                                {/*{selected_tokenB == 3 && accountbalance_sigz}{selected_tokenB == 3 && !accountbalance_sigz && "0"}*/}
+                            <p> Balance: {accountcall(selected_tokenA)}
                             </p>
                         </div>
                 </div>

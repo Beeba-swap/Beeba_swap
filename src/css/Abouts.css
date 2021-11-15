@@ -1,105 +1,130 @@
-.Border{
-    border: 2px solid #0BAB64;
-    border-width: 10%;
+.About-our{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.About-our .Team{
+    font-family: 'Caveat', cursive;
+    width: 50%;
+    margin: 2% 0 0;
+    text-align: center;
+}
+.About-our .Education{
+    font-family: 'Caveat', cursive;
+    width: 50%;
+    margin: 2% 0 0;
+    text-align: center;
+}
+.About-our .Team h2{
+    font-size: 52px;
+    margin: 0 0 0 8%;
+}
+.About-our .Education h2{
+    font-size: 36px;
+}
+.About-our .left{
+    padding: 2%;
+    display: flex;
+    flex-flow: wrap;
+    width: 46%;
+    gap: 2%;
+    justify-content: space-between;
+}
+.About-our .horizon{
+    display: block;
+    width: 2%;
+    border-left: 2px solid #06D85F;
+}
+.About-our .right{
+    display: block;
+    width: 46%;
+}
+.About-our .Border{
+    padding: 8px;
+    border: 2px solid #06D85F;
+    background-color: #06D85F;
     width: 180px;
     height: max-content;
-    border-radius: 20px;
-    background-color: #0BAB64;
     text-align: center;
-    color: white;
-    font-family: Caveat;
+    border-radius: 20px;
+    color: #ffffff;
+    cursor: pointer;
     font-size: 24px;
-  }
-img{
-  padding: 5px;
-  width: 96%;
-  border-radius: 20%;
-  justify-content: center;
+    font-family: 'Caveat', cursive;
+    margin: 2% 0;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
-.f1{
+.About-our .Border:hover {
+    border: 2px solid #06D85F;
+    background-color: #ffffff;
+    color: #06D85F;
+    padding: 2%;
+    transition: 0.8s ease-in-out;
+}
+.About-our .Border img{
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+}
+.About-our .header{
+    font-family: 'Caveat', cursive;
+}
+.About-our .right .explain{
+    text-align: left;
+    margin: 0 0 0 4%;
+}
+.About-our .right .explain h1{
+    font-size: 36px;
+}
+.About-our .right .explain p{
+    font-size: 24px;
+    font-family: 'Itim', cursive;
+}
+.About-our .right .explain button{
+    font-family: 'Caveat', cursive;
+    padding: 1% 3%;
+    border: 2px solid #06D85F;
+    background-color: #06D85F;
+    border-radius: 20px;
+    color: #ffffff;
+    cursor: pointer;
+    text-align: center;
+    font-size: 28px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin: 0 0 0 4%;
+}
+.About-our .right .explain button:hover{
+    border: 2px solid #06D85F;
+    background-color: #ffffff;
+    color: #06D85F;
+    padding: 2% 4%;
+    transition: 0.8s ease-in-out;
+}
+.About-our .usage{
+    font-family: 'Caveat', cursive;
+    font-size: 36px;
+    margin: 8% 0 4% 8%;
+    text-align: left;
+}
+.About-our .image-usage{
     display: flex;
-    justify-content: center;
-    gap: 5%;
-    flex-wrap: wrap;
-    margin-top: 2%;
-  }
-.f2{
-    display: flex;
-    justify-content: center;
-    gap: 5%;
-    margin-top:5%;
-    flex-wrap: wrap;
+    flex-direction: row;
 }
-.f3{
-  display: flex;
-  justify-content: start;
-  gap: 5%;
-  margin-top:5%;
-  flex-wrap: wrap;
+.About-our .image-usage img{
+    margin: 2% 4% 0;
+    padding: 2%;
+    width: 120px;
+    height: 120px;
+    background-color: #ffffff;
+    border: 2px solid #06D85F;
+    border-radius: 20px;
 }
-.font{
-  font-size: 60px;
-  font-family: Caveat;
-  margin-left: 10%;
+.image-usage img:hover{
+    background-color: rgb(229, 253, 255);
+    border: 2px solid #06D85F;
+    border-radius: 20px;
 }
-.left{
-  float: left;
-  width: 50%;
-  padding: 15px;
-  
-}
-.button_about {
-  background-color: #0BAB64;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 20px;
-  margin-top: 5%;
-}
-.center{
-  text-align: center;
-  height: 100px;
-  margin-left: 30%;
-}
-.header{
-  font-size: 40px;
-  font-family: Itim;
-}
-.image{
-  width: 140px;
-  height: 140px;
-  display: flex;
-  justify-content: center;
-  margin-left: 30%;
-  gap:40%;
-}
-.block2{
-  width:50%;
-  height: 100%;
-}
-.profile{
-  width: 160px;
-  height: 160px;
-}
-.img{
-  width: 20%;
-  height: 20%;
-}
-.txt{
-  font-family: Itim;
-  font-size: 20px;
-}
-.button_about a{
-  align-items: baseline;
-  text-decoration: none;
-  color: black;
-}
-.border{
-  border-right:  2px solid gray;
+.About-our span{
+    color: #06D85F;
 }

@@ -18,12 +18,14 @@ const Viewer = () =>{
                 )
         }
         const updateblock = () => {
-            web3.eth.getBlockNumber().then((result)=>{
-                if(result){setlatest_block(result)}
-            });
-            web3.eth.getGasPrice().then((result)=>{
-                if(result){setlatest_gas(web3.utils.fromWei(result.toString(),"wei"))}}
-            )
+            if(window.ethereum){
+                web3.eth.getBlockNumber().then((result)=>{
+                    if(result){setlatest_block(result)}
+                });
+                web3.eth.getGasPrice().then((result)=>{
+                    if(result){setlatest_gas(web3.utils.fromWei(result.toString(),"wei"))}}
+                )
+            }
         }
         useEffect(
             ()=>{

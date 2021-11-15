@@ -137,7 +137,7 @@ const Wallet = () => {
                             {userBalance&&<div><pre><img src={"./image/mistersigz-token.png"}/>{mistersigz_balance} <span> Sigz</span></pre></div>}
                         </div>
                         <div className={"logout"}>
-                            {account && <FontAwesomeIcon icon="sign-out-alt" className="sign-out"/> && <button onClick={deactivate} >Logout</button>}
+                            {account && <div className="sign-out-div"><FontAwesomeIcon icon="sign-out-alt" className="sign-out" /></div> && <button onClick={deactivate} >Logout</button>}
                             {!account && <button onClick={()=>{window.location = "#"}}>&times;</button>}
                         </div>
                     </div>
