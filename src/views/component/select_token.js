@@ -57,6 +57,7 @@ const Select_token = () => {
     }
     //execute user
     let { account } = useEthers();
+    const userBalance = useEtherBalance(account)
     var [accountbalance_eth,setaccountbalance_eth] = useState(useEtherBalance(account))// ethers
     var [accountbalance_bee, setaccountbalance_bee] = useState(parseFloat(0,10)); // beeba
     var [accountbalance_sigz, setaccountbalance_sigz] = useState(parseFloat(0,10)); // mistersigz
@@ -315,7 +316,10 @@ const Select_token = () => {
             if(account){
                 switch (_token){
                     case 1 :
-                        return  0 ;break;
+                        if (typeof userBalance !== 'undefined'){
+                            return formatEther(userBalance);
+                        }
+                        break;
                     case 2 :
                         if(accountbalance_bee){return  accountbalance_bee}break;
                     case 3:
