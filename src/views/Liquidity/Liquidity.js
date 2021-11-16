@@ -67,7 +67,7 @@ const Liquidity = () =>{
                             <p>{supply_ethbee/supply_bee}</p>
                         </div>
                         <div className="Supply-call">
-                            <a href={"https://rinkeby.etherscan.io/address/0xEF28fC4659612dD0D07826206a2c95e2Fd8C6765"}>
+                            <a href={"https://rinkeby.etherscan.io/address/0x09B1e29c99B7d2F1f653f2ac0e3ce8cBd92D436D"}>
                                 <button>
                                     <FontAwesomeIcon icon="arrow-right"/>  <FontAwesomeIcon icon="cube"/>
                                 </button>
@@ -93,7 +93,7 @@ const Liquidity = () =>{
                             <p>{supply_ethsigz/supply_sigz}</p>
                         </div>
                         <div className="Supply-call">
-                            <a href={"https://rinkeby.etherscan.io/address/0x7FC1414C4d676C59dcD58fAdcfdD7d012359aFCc"}>
+                            <a href={"https://rinkeby.etherscan.io/address/0x489d1f3DD8e9E2abd2480C952cb833778f102876"}>
                                 <button>
                                     <FontAwesomeIcon icon="arrow-right"/>  <FontAwesomeIcon icon="cube"/>
                                 </button>
