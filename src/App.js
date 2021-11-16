@@ -23,6 +23,7 @@ library.add(faBars, faSun,
 
 class App extends Component {
     render() {
+        document.title = "Beeba swap";
         return (
             <div class="Main">
                 <Navbar />

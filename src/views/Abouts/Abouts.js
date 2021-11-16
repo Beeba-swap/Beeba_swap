@@ -13,35 +13,35 @@ const Abouts = () =>{
                             <img src='image/beeba.png'></img>
                         </div>
                         <div>Narodom Yatnimit</div>
-                        <div>System Analyst</div>
+                        <div>Full Stack Developer</div>
                     </div>
                     <div className='Border'>
                         <div className='profile'>
                             <img src='image/mistersigz.png'></img>
                         </div>
                         <div>Warat Yenjaiprasert</div>
-                        <div>Developer BackEnd</div>
+                        <div>BackEnd && Blockchain Developer </div>
                     </div>
                     <div className='Border'>
                         <div className='profile'>
                             <img src='image/park.jpg'></img>
                         </div>
                         <div>Korawit Moonsarn</div>
-                        <div>Developer FrontEnd</div>
+                        <div>FrontEnd Developer</div>
                     </div>
                     <div className='Border'>
                         <div className='profile'>
                             <img src='image/195323.jpg'></img>
                         </div>
                         <div>Setthathorn Somrug</div>
-                        <div>Developer FrontEnd</div>
+                        <div>FrontEnd Developer</div>
                     </div>
                     <div className='Border'>
                         <div className='profile'>
                             <img src='image/nam.jpg'></img>
                         </div>
                         <div>Rinrada Kunjobmueng</div>
-                        <div>Developer FrontEnd</div>
+                        <div>FrontEnd Developer</div>
                     </div>
                 </div>
                 <div className='horizon'></div>
